@@ -32,7 +32,7 @@
     }
 
     h1,
-    h3 {
+    p {
       /* margin-top: 30px; */
       margin-bottom: -15px;
     }
@@ -86,8 +86,9 @@
       display: none;
       cursor: pointer;
       background-color: #007bff8e;
+      font-size: 20px;
       color: #fff;
-      padding: 10px;
+      padding: 18px;
       border: none;
       border-radius: 5px;
     }
@@ -117,18 +118,18 @@
     }
 
     function showPasswordPopup() {
-      var cookieValue = getCookie("weekendevelopment3");
+      var cookieValue = getCookie("weekendevelopment");
       if (cookieValue !== "1") {
         var password = prompt("Wprowadź hasło:");
         var correctPassword = "wed";
 
         if (password === correctPassword) {
-          setCookie("weekendevelopment3", "1", 4);
+          setCookie("weekendevelopment", "1", 4);
           document.getElementById("wed").classList.add("show");
           document.getElementById("access").classList.add("hide");
         } else {
           alert("Nieprawidłowe hasło!");
-          setCookie("weekendevelopment3", "0", 4);
+          setCookie("weekendevelopment", "0", 4);
           return;
         }
       }
@@ -139,7 +140,7 @@
 </head>
 <body>
   <main id="wed">
-    WED CheatSheet: ADMINISTRACJA SYSTEMAMI OPERACYJNYMI
+    WED CheatSheet: ADMINISTRACJA SYSTEMAMI OPERACYJNYMI v02
     <ol>
       <li><a href="#p1">Active Directory OPIS</a></li>
       <li><a href="#p2">Elementy AD Data Store</a></li>
@@ -152,7 +153,12 @@
       <li><a href="#p9">Funkcje Zasobów GPO</a></li>
       <li><a href="#p10">Kolejność Przetwarzania Zasad</a></li>
       <li><a href="#p11">Wdrażanie Zmian w Zasadach</a></li>
-      <li><a href="#p12"></a></li>
+      <li><a href="#p12">Zastosowanie uprawnień NTFS</a></li>
+      <li><a href="#p13">Zezwolenia uprawnień NTFS</a></li>
+      <li><a href="#p14">Disable inheritance</a></li>
+      <li><a href="#p15">Klonowanie kontrolerów domeny - Dobre zasady</a></li>
+      <li><a href="#p16">Zarządzanie dyskami</a></li>
+      <li><a href="#p17">Pula dysków</a></li>
     </ol>
     <hr>
     <h1 id="p1">Active Directory OPIS</h1>
@@ -204,6 +210,7 @@
       <li>Infrastructure Master Role</li>
       <li>PDC Emulator Role</li>
     </ul>
+    <hr>
     <h1 id="p5">GPO zasady grup OPIS</h1>
     <p>Zasady grup (GPO) to zbiory ustawień kontrolujących zachowania stacji klienckich i serwerów w systemie Windows.
     Pozwalają na głęboką ingerencję w zachowanie systemów, obejmując ponad 2000 różnych ustawień dla użytkowników i
@@ -276,7 +283,90 @@
         </ul>
       </li>
     </ul>
+    <hr>
+    <h1 id="p12">Zastosowanie uprawnień NTFS</h1>
+    <ul>
+      <li><b>Wielokrotne uprawnienia NTFS:</b>
+        <ul>
+          <li>Uprawnienia NTFS sumują się,</li>
+          <li>Uprawnienia do pliku nadpisują uprawnienia do folderu,</li>
+          <li>Uprawnienia Deny nadpisują pozostałe</li>
+        </ul>
+      </li>
+      <li><b>Dziedziczenie uprawnień NTFS:</b>
+        <ul>
+          <li>Przypisanie uprawnień do folderu nadrzędnego powoduje dziedziczenie uprawnień przez pliki i foldery w nim zawarte.</li>
+          <li>Blokowanie dziedziczenia uprawnień; Folder, dla którego zablokowano dziedziczenie uprawnień stanie się tym samym nowym
+          folderem nadrzędnym</li>
+        </ul>
+      </li>
+      <li><b>Kopiowanie i przenoszenie plików i folderów:</b>
+        <ul>
+          <li>Skopiowanie elementy dziedziczą uprawnienia,</li>
+          <li>Tylko elementy przenoszone w obrębie tej samej partycji zachowują uprawnienia.</li>
+        </ul>
+      </li>
+    </ul>
+    <hr>
+    <h1 id="p13">Zezwolenia uprawnień NTFS:</h1>
+    <ul>
+      <li><b>Full control</b><br>- umożliwia użytkownikom odczytywanie, zapisywanie, zmienianie i usuwanie plików i podfolderów. Ponadto
+      użytkownicy mogą zmieniać ustawienia uprawnień do wszystkich plików i podkatalogów oraz przejmować plik na własność.</li>
+      <li><b>Modify</b><br>- umożliwia użytkownikom odczytywanie i zapisywanie plików i podfolderów; umożliwia także usunięcie folderu.</li>
+      <li><b>Read & execute</b><br>- umożliwia użytkownikom przeglądanie i uruchamianie plików wykonywalnych, w tym skryptów.</li>
+      <li><b>List folder contents</b><br>- umożliwia przeglądanie i wyświetlanie listy plików i podfolderów, a także uruchamianie plików;
+      dziedziczone tylko przez foldery.</li>
+      <li><b>Read</b><br>- umożliwia użytkownikom przeglądanie zawartości folderu i podfolderu.</li>
+      <li><b>Write</b><br>- Umożliwia użytkownikom dodawanie plików i podfolderów, umożliwia zapis do pliku.</li>
+    </ul>
+    <p>EXTRA: <br>
+    <b>Change Permissions</b><br>Uprawnienie to daje możliwość użytkownikowi możliwość zmiany uprawnień dla pliku lub folderu. <br><b>Take Ownership</b><br>Uprawnienie to daje użytkownikowi możliwość stania się właścicielem pliku lub folderu.</p>
+    <hr>
+    <h1 id="p14">Disable inheritance</h1>
+    <p><b>Convert inherited permissions into explicit permissions on this object</b><br>Użytkownicy którzy mieli dostęp będą, mieli dalej dostęp. Najlepiej wybierać tą opcje już na działającym systemie na
+    produkcji.</p>
+    <p><b>Remove all inherited permission from this object</b><br>Usuwa wszystkie nadrzędne pozwolenia. Stosować na systemach testowych.</p>
+    <hr>
+    <h1 id="p15">Klonowanie kontrolerów domeny - Dobre zasady</h1>
+    <ul>
+      <li>Unikaj pojedynczego punktu awarii</li>
+      <li>Synchronizacja czasu</li>
+      - Unikaj checkpoint
+      - Uruchom maksymalnie 10 nowych klonów w tym samym czasie
+      - Konwencja nazewnicza
+    </ul>
+    <hr>
+    <h1 id="p16">Zarządzanie dyskami</h1>
+    <p>Inicjalizacja dysku</p>
+    <p>MBR - nieobsługuje dysków większych niż 2 TB</p>
+    <p>right click windows -&gt; Disk management -&gt; right click disk -&gt; online -&gt; right click disk -&gt; Initialize Disk -&gt; MBR/GPT -&gt; OK</p>
 
+    <p>Tworzenie partycji simple</p>
+    <p>ReFS - format obsługujący bardzo duże dyski, przechowujące iso i obrazy</p>
+    <p>right click windows -&gt; Disk management -&gt; right click disk -&gt; New Simple Volume</p>
+    <p><em>Perform quick format!</em></p>
+
+    <p>Rodzaje partycji:</p>
+    <ul>
+      <li>Striped - Odpowiednik RAID 0 - sumuje pojemność dysków</li>
+      <li>Mirrored - Odpowiednik RAID 1 - jednocześnie zapisuje na wielu dyskach</li>
+      <li>RAID 5 - min.3 dyski - większa prędkość odczytu, gwarancja bezpieczeństwa danych w razie utraty jednego z dysków
+      </li>
+    </ul>
+    <p>Rozszerzanie partycji</p>
+    <p>right click windows -&gt; Disk management -&gt; right click disk -&gt; Extend Volume</p>
+    <p>Tworzenie dysku wirtualnego</p>
+    <p>right click windows -&gt; Disk management -&gt; Action -&gt; Create VHD</p>
+    <p>Montowanie dysku wirtualnego</p>
+    <p>Find place of file -&gt; right click -&gt; mount</p>
+    <p><em>Dyski wirtualne należy inicjalizować!</em></p>
+    <hr>
+    <h1 id="p17">Pula dysków</h1>
+    <p>Tworzenie puli dysków</p>
+    <p>Server manager -&gt; File and Storage Services -&gt; Voumes -&gt; Storage Pools -&gt; Tasks (right corner) -&gt; new Storage Pool</p>
+    <p>Tworzenie wirtualnego dysku w puli</p>
+    <p>pula right click -&gt; new virtual disk -&gt; next -&gt; name of disk -&gt; simple (większa prędkość) / mirror(tworzy kopie) / parity - thin (dynamiczne przydzielanie) /fixed</p>
+    <hr>
   </main>
   <div id="access">ACCESS DENIED</div>
   <footer>WEEK-END DEVELOPMENT<br>Copyright &copy; 2024 </footer>
