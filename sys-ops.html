@@ -121,7 +121,7 @@
       var cookieValue = getCookie("weekendevelopment");
       if (cookieValue !== "1") {
         var password = prompt("Wprowadź hasło:");
-        var correctPassword = "wed";
+        var correctPassword = "wed8";
 
         if (password === correctPassword) {
           setCookie("weekendevelopment", "1", 4);
@@ -140,8 +140,11 @@
 </head>
 <body>
   <main id="wed">
-    WED CheatSheet: ADMINISTRACJA SYSTEMAMI OPERACYJNYMI v02
+    WED CheatSheet: ADMINISTRACJA SYSTEMAMI OPERACYJNYMI v03
     <ol>
+      <li><a href="#d1">IGDLA</a></li>
+      <li><a href="#d2">Zmiana domyślnego katalogu</a></li>
+      <li><a href="#d3">EXTRAS</a></li>
       <li><a href="#p1">Active Directory OPIS</a></li>
       <li><a href="#p2">Elementy AD Data Store</a></li>
       <li><a href="#p3">Narzędzia AD</a></li>
@@ -160,6 +163,47 @@
       <li><a href="#p16">Zarządzanie dyskami</a></li>
       <li><a href="#p17">Pula dysków</a></li>
     </ol>
+    <hr>
+    <h1 id="d1">IGDLA</h1>
+    <ul>
+      <li>Identity -USERS</li>
+      <li>Global Group Zawiera: -Użytkownicy</li>
+      <li>Domain Local Zawiera: -Grupy globalne -Prawa</li>
+      <li>Access</li>
+    </ul>
+    <hr>
+    <h1 id="d2">Zmiana domyślnego katalogu</h1>
+    <p>redircmp - dla PC <br>redirusr - dla USERów</p>
+    <hr>
+    <h1 id="d3">EXTRAS</h1>
+    <p>Delegowanie uprawnień dla konta ma być przypisywane do jednostki organizacyjnej (nie do grupy!)</p>
+    <hr>
+    <p>klient musi mieć ustawiony DNS na ip kontrolera i być w tej samej adresacji aby mieć dostęp do domeny.</p>
+    <hr>
+    <p>Serwer manager odpowiada za promocje i degradacje funkcji kontrolera domeny</p>
+    <hr>
+    <p><b>SCONFIG</b> - konfiguracja serwer core.</p>
+    <hr>
+    <p>Recycle bin on -> AD Administrative Center</p>
+    <hr>
+    <p>Wymuszenie updatu polices - <b>GPOUPDATE /FORCE</b></p>
+    <hr>
+    <p><b>FSRM</b>- FILE SCREENING ustawia ograniczenie na folder w MB</p>
+    <hr>
+    <p><b>QUOTA</b>- na dysk</p>
+    <hr>
+    <p><b>LOOPBACK PROCESSING MODE</b> pytanie z salą szkoleniową podpięte do jednostki OU szkolenia</p>
+    <hr>
+    <p><b>ENTERPRICE ADMIN</b> > DOMAIN ADMIN</p>
+    <hr>
+    <p>Włonczenie dziedziczenia na OU wymaga włączenia GPO ENFORCE</p>
+    <hr>
+    <p>Blokada dziedziczenia jest włączana na jednostkach nie na polisie (zastosowanie przy pojedynczym GPO)</p>
+    <hr>
+    <p>PARTY 3-way mirror dla 8 dysków NIE dla 5</p><hr>
+    <p>MIRROR wolny ale możliwość dla 5 DYSKÓW</p><hr>
+    <p>NTFS DENY zawsze blokuje i jest najważniejszy <br>FullControl + Modify = FullControll (Sumowanie uprawnień)</p><hr>
+    <p>Aby usunąć OU trzeba wyłączyć DEL PROTECTION w widoku zaawansowanym.</p>
     <hr>
     <h1 id="p1">Active Directory OPIS</h1>
     <p><b>Active directory</b>Active directory to implementacja protokołu sieciowego warstwy aplikacji LDAP - Lightweight Directory Access Protocol.</p>
