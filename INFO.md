@@ -15,5 +15,9 @@ No.| PRZEDMIOT | TERMIN 0 | TERMIN 1 | TERMIN 2
 
 ## STRONA Z PODPOWIEDZIAMI
 ### Do Administracja sieciowymi systemami operacyjnymi
-[Strona](https://week-end-development.github.io/WED/sys-ops.html)
-Hasło: `wed8`
+[Strona Cheat Sheet SYS-OPS](https://week-end-development.github.io/WED/sys-ops.html)
+
+Hasło:
+```txt
+wed8
+```
