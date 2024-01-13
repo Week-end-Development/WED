@@ -65,4 +65,4 @@ Nie wahaj się dołączyć do naszej społeczności Week-End Development Zaczyna
 Czekamy na Ciebie!
 
 Z poważaniem,
-***"WEEK-END Development" Administration Team*** 🚀
+***"WEEK-END Development" Administration Team*** 💻🚀
