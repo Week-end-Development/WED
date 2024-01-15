@@ -56,7 +56,7 @@ $$ s_1=\frac{-b+\sqrt{\Delta}}{2a}=\frac{-1+\sqrt{-3}}{2}=-0.5-i\frac{\sqrt{3}}{
 
 $$ s_2=\frac{-b-\sqrt{\Delta}}{2a}=\frac{-1-\sqrt{-3}}{2}=-0.5+i\frac{\sqrt{3}}{2}$$
 
-CZY OSCYLACYJNY?
+CZY STABILNY?
 > TAK, ponieważ znajduje się po lewej stronie osi Im.
 
 OSCYLACYJNY CZY INERCYJNY?
