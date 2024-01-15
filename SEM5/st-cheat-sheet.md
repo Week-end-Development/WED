@@ -45,7 +45,9 @@ $$ \text{równanie różniczkowe}=\frac{d^2y}{dt^2}+2y-u=0 $$
 ## 2. Dla podanej transmitancji operatorowej określ stabilność układu, przedstaw bieguny na osi oraz określ czy jest oscylacyjny czy inercyjny.
 
 $$ G(s)=\frac{1}{s^2+s+1} $$
+
 BIEGUNY:
+
 $$ s^2+s+1=0 $$
 
 $$ \Delta=b^2-4ac=1-4=-3 $$
@@ -67,7 +69,9 @@ Ts - co ile czasu \
 q - operator przesunięcia do przodu
 
 $$ G(s)=\frac{1}{10s+1} $$
+
 METODA EULERA dla Ts=1
+
 $$ s=\frac{q-1}{Ts} $$
 
 $$ G(s)=\frac{1}{10(\frac{q-1}{Ts})+1}=\frac{1}{10(q-1)+1}=\frac{1}{10q-9} $$
@@ -79,6 +83,7 @@ $$ y(t)(10q-9)=u(t) $$
 $$ 10y(t+1)-9y(t0)=u(t) $$
 
 $$ y(t+1)=\frac{u(t)}{10}+\frac{9y(t)}{10} $$
+
 SYMULACJA
 
 $$ y(1)=0.1u(0)+0.9y(0)=0.1 $$
