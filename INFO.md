@@ -9,7 +9,7 @@ No.| PRZEDMIOT | TERMIN 0 | TERMIN 1 | TERMIN 2
 No.| PRZEDMIOT | TERMIN 0 | TERMIN 1 | TERMIN 2
 ---|:---:|:---:|:---:|:---:
 1  |Projektowanie rozwiązań internetowych| - | 14:30 18.01.2024 P1-215 | 14:30 25.01.2024 P1-215
-2  |Systemy wizyjne| - | N/A | N/A
+2  |Systemy wizyjne| - | 10:05 24.01.2024 P2-212 | 10:05 31.01.2024 P2-212
 3  |Podstawy teorii systemów| - | 18:05 22.01.2024 P5-A-1 | 18:05 29.01.2024 P5-A-1
 4  |Administracja sieciowymi systemami operacyjnymi| DONE | 15.01.2024 | 22.01.2024
 
