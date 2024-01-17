@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>SYS-OPS</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #333;
+      color: #eee;
+    }
+
+    main {
+      display: none;
+      padding: 0 10px;
+      margin: 0 auto;
+      max-width: 1800px;
+      font-family: Consolas;
+      font-weight: 600;
+    }
+
+    h1,
+    p {
+      /* margin-top: 30px; */
+      margin-bottom: -15px;
+    }
+
+    hr{margin-top: 30px;}
+
+    p,
+    ul,
+    table,
+    ol {
+      margin-top: 20px;
+      font-size: 18px;
+      text-align: justify;
+    }
+
+    ul,
+    ol {
+      padding-left: 40px;
+    }
+
+    a,
+    a:hover {
+      text-decoration: none;
+      color: #eee;
+      font-size: 22px;
+    }
+
+    footer {
+      text-align: center;
+      height: 300px;
+      padding-top: 30px;
+      font-family: Consolas;
+      font-weight: 600;
+    }
+    .show {
+      display: block;
+    }
+    .hide {
+      display: none;
+    }
+    .dimmed{
+      opacity: 0.2;
+    }
+    .correct{
+      color: #3b3;
+    }
+    #scrollToTopBtn {
+      position: fixed;
+      bottom: 8px;
+      left: 8px;
+      display: none;
+      cursor: pointer;
+      background-color: #007bff8e;
+      font-size: 20px;
+      color: #fff;
+      padding: 18px;
+      border: none;
+      border-radius: 5px;
+    }
+    #access{
+      text-align: center;
+      height: 100px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      font-family: Consolas;
+      font-size: 50px;
+      font-weight: 600;
+      font-style: italic;
+      color: #f00;
+    }
+
+  </style>
+  <script>
+    function getCookie(name) {
+      const cookieValue = document.cookie.match('(^|[^;]+)\\s*' + name + '\\s*=\\s*([^;]+)');
+      return cookieValue ? cookieValue.pop() : undefined;
+    }
+
+    function setCookie(name, value, hours) {
+      const expirationDate = new Date();
+      expirationDate.setTime(expirationDate.getTime() + (2000));
+      document.cookie = `${name}=${value}; expires=${expirationDate.toUTCString()}; path=/`;
+    }
+
+    function showPasswordPopup() {
+      var cookieValue = getCookie("weekendevelopment");
+      if (cookieValue !== "1") {
+        var password = prompt("Wprowadź hasło:");
+        var correctPassword = "wed8";
+
+        if (password === correctPassword) {
+          setCookie("weekendevelopment", "1", 4);
+          document.getElementById("wed").classList.add("show");
+          document.getElementById("access").classList.add("hide");
+        } else {
+          alert("Nieprawidłowe hasło!");
+          setCookie("weekendevelopment", "0", 4);
+          return;
+        }
+      }
+    }
+
+    window.onload = showPasswordPopup;
+  </script>
+</head>
+<body>
+  <main id="wed">
+    WED CheatSheet: ADMINISTRACJA SYSTEMAMI OPERACYJNYMI v03
+    <ol>
+      <li><a href="#d1">IGDLA</a></li>
+      <li><a href="#d2">Zmiana domyślnego katalogu</a></li>
+      <li><a href="#d3">EXTRAS</a></li>
+      <li><a href="#p1">Active Directory OPIS</a></li>
+      <li><a href="#p2">Elementy AD Data Store</a></li>
+      <li><a href="#p3">Narzędzia AD</a></li>
+      <li><a href="#p4">Operations Master Roles (FSMO)</a></li>
+      <li><a href="#p5">GPO zasady grup OPIS</a></li>
+      <li><a href="#p6">Rola GPO w Active Directory</a></li>
+      <li><a href="#p7">Struktura Okna Zarządzania GPO</a></li>
+      <li><a href="#p8">Obiekty Zasad Grupy (GPO)</a></li>
+      <li><a href="#p9">Funkcje Zasobów GPO</a></li>
+      <li><a href="#p10">Kolejność Przetwarzania Zasad</a></li>
+      <li><a href="#p11">Wdrażanie Zmian w Zasadach</a></li>
+      <li><a href="#p12">Zastosowanie uprawnień NTFS</a></li>
+      <li><a href="#p13">Zezwolenia uprawnień NTFS</a></li>
+      <li><a href="#p14">Disable inheritance</a></li>
+      <li><a href="#p15">Klonowanie kontrolerów domeny - Dobre zasady</a></li>
+      <li><a href="#p16">Zarządzanie dyskami</a></li>
+      <li><a href="#p17">Pula dysków</a></li>
+    </ol>
+    <hr>
+    <h1 id="d1">IGDLA</h1>
+    <ul>
+      <li>Identity -USERS</li>
+      <li>Global Group Zawiera: -Użytkownicy</li>
+      <li>Domain Local Zawiera: -Grupy globalne -Prawa</li>
+      <li>Access</li>
+    </ul>
+    <hr>
+    <h1 id="d2">Zmiana domyślnego katalogu</h1>
+    <p>redircmp - dla PC <br>redirusr - dla USERów</p>
+    <hr>
+    <h1 id="d3">EXTRAS</h1>
+    <p>Delegowanie uprawnień dla konta ma być przypisywane do jednostki organizacyjnej (nie do grupy!)</p>
+    <hr>
+    <p>klient musi mieć ustawiony DNS na ip kontrolera i być w tej samej adresacji aby mieć dostęp do domeny.</p>
+    <hr>
+    <p>Serwer manager odpowiada za promocje i degradacje funkcji kontrolera domeny</p>
+    <hr>
+    <p><b>SCONFIG</b> - konfiguracja serwer core.</p>
+    <hr>
+    <p>Recycle bin on -> AD Administrative Center</p>
+    <hr>
+    <p>Wymuszenie updatu polices - <b>GPOUPDATE /FORCE</b></p>
+    <hr>
+    <p><b>FSRM</b>- FILE SCREENING ustawia ograniczenie na folder w MB</p>
+    <hr>
+    <p><b>QUOTA</b>- na dysk</p>
+    <hr>
+    <p><b>LOOPBACK PROCESSING MODE</b> pytanie z salą szkoleniową podpięte do jednostki OU szkolenia</p>
+    <hr>
+    <p><b>ENTERPRICE ADMIN</b> > DOMAIN ADMIN</p>
+    <hr>
+    <p>Włonczenie dziedziczenia na OU wymaga włączenia GPO ENFORCE</p>
+    <hr>
+    <p>Blokada dziedziczenia jest włączana na jednostkach nie na polisie (zastosowanie przy pojedynczym GPO)</p>
+    <hr>
+    <p>PARTY 3-way mirror dla 8 dysków NIE dla 5</p><hr>
+    <p>MIRROR wolny ale możliwość dla 5 DYSKÓW</p><hr>
+    <p>NTFS DENY zawsze blokuje i jest najważniejszy <br>FullControl + Modify = FullControll (Sumowanie uprawnień)</p><hr>
+    <p>Aby usunąć OU trzeba wyłączyć DEL PROTECTION w widoku zaawansowanym.</p>
+    <hr>
+    <h1 id="p1">Active Directory OPIS</h1>
+    <p><b>Active directory</b>Active directory to implementacja protokołu sieciowego warstwy aplikacji LDAP - Lightweight Directory Access Protocol.</p>
+    <p><b>Usługa katalogowa</b> to obszerna, hierarchiczna baza danych, zawierająca informacje o użytkownikach, grupach użytkowników, komputerach, a także zasobach sieciowych</p>
+    <hr>
+    <h1 id="p2">Elementy AD Data Store</h1>
+    <ul>
+      <li><b>FIZYCZNE:</b>
+        <ul>
+          <li>Data store</li>
+          <li>Domain controllers</li>
+          <li>Global catalog server</li>
+          <li>RODCs</li>
+        </ul>
+      </li>
+      <li><b>LOGICZNE:</b>
+        <ul>
+          <li>Partitions</li>
+          <li>Schema</li>
+          <li>Domains</li>
+          <li>Domain trees</li>
+          <li>Forests</li>
+          <li>Sites</li>
+          <li>OUs - jednostki organizacyjne</li>
+          <li>odzwierciedlenie struktury firmy</li>
+        </ul>
+      </li>
+    </ul>
+    <hr>
+    <h1 id="p3">Narzędzia AD</h1>
+    <ul>
+      <li>AD Users and Computers</li>
+      <li>AD Sites and Services</li>
+      <li>AD Domains and Trusts</li>
+      <li>AD Schema ( regsvr32 schmmgmt.dll)</li>
+      <li>AD Administrative Center (Recycle Bin, Fine-Granted Password Policy)</li>
+    </ul>
+    <hr>
+    <h1 id="p4">Operations Master Roles (FSMO)</h1>
+    <p>Forest-wide Operations Master Roles:</p>
+    <ul>
+      <li>Domain Naming Master Role</li>
+      <li>Schema Master Role</li>
+    </ul>
+    <p>Domain-wide Operations Master Roles:</p>
+    <ul>
+      <li>RID MAster Role</li>
+      <li>Infrastructure Master Role</li>
+      <li>PDC Emulator Role</li>
+    </ul>
+    <hr>
+    <h1 id="p5">GPO zasady grup OPIS</h1>
+    <p>Zasady grup (GPO) to zbiory ustawień kontrolujących zachowania stacji klienckich i serwerów w systemie Windows.
+    Pozwalają na głęboką ingerencję w zachowanie systemów, obejmując ponad 2000 różnych ustawień dla użytkowników i
+    komputerów. Przykładowe kontrolowane elementy to pulpit użytkownika, dostęp do panelu sterowania, menu start, ikona "Mój
+    Komputer", czy blokowanie uruchamiania konkretnych programów.</p>
+    <p>GPO umożliwiają również kontrolę zachowania komputerów, takie jak konfiguracja IPSec, który służy do zabezpieczania
+    komunikacji internetowej poprzez szyfrowanie i uwierzytelnianie. IPSec może działać w trybie transportowym (szyfrowanie
+    tylko zawartości pakietów danych) lub tunelowym (szyfrowanie całych pakietów IP z nagłówkami).</p>
+    <p>Obiekty GPO składają się z dwóch części: ustawień użytkownika i ustawień komputera. Mogą być przypisywane na różnych
+    poziomach w Active Directory, takich jak lokalnie, na poziomie lokacji, domeny lub jednostki organizacyjnej.</p>
+    <p>Lokalne GPO są przechowywane na każdym komputerze z osobna i dotyczą tylko tej maszyny. Są używane w środowisku bez
+    Active Directory, ale wymagają ręcznej konfiguracji na każdym komputerze. Lokalny edytor zasad grupy jest dostępny
+    poprzez wpisanie polecenia "gpedit.msc" w menu START.</p>
+    <p>Ustawienia w obiektach GPO są domyślnie dziedziczone, co oznacza, że konfiguracja na poziomie domeny wpływa na wszystkie
+    jednostki organizacyjne, chyba że późniejsza polisa modyfikuje te ustawienia.</p>
+    <hr>
+    <h1 id="p6">Rola GPO w Active Directory:</h1>
+    <ul>
+      <li>Nieodłączny element usługi Active Directory, oferujący największe możliwości konfiguracyjne.</li>
+      <li>Zasady Grupy są konfigurowane na serwerze i implementowane dla wybranych komputerów oraz użytkowników.</li>
+      <li>Wszelkie ustawienia przechowywane są w Obiektach Zasad Grupy (GPO).</li>
+    </ul>
+    <hr>
+    <h1 id="p7">Struktura Okna Zarządzania GPO:</h1>
+    <ul>
+      <li><b>Lewy obszar:</b>Zawiera domeny i jednostki organizacyjne (OU) w obrębie domeny.</li>
+      <li><b>Prawy obszar:</b>Pozwala na modyfikację zasad oraz ich opcji.</li>
+    </ul>
+    <hr>
+    <h1 id="p8">Obiekty Zasad Grupy (GPO):</h1>
+    <p>Zawarte są w zbiorczym kontenerze nazwanym Obiekty Zasad Grupy (Group Policy Objects).<br>Obejmują zasady przygotowane przez administratora oraz domyślne zasady systemowe:</p>
+    <ul>
+      <li>Domyślne Zasady Kontrolerów Domeny (Default Domain Controllers Policy)</li>
+      <li>Domyślne Zasady Domeny (Default Domain Policy)</li>
+    </ul>
+    <hr>
+    <h1 id="p9">Funkcje Zasobów GPO</h1>
+    <p><b>Zawartość GPO:</b><br> Wstępnie skonfigurowane zasady, np. zasady haseł dla kont użytkowników.
+    Możliwość modyfikacji istniejących zasad.</p>
+    <p><b>Linki do Zasobów:</b> <br>Zasady oddziałujące na daną jednostkę organizacyjną lub domenę wymagają linków. <br>Zasada przechowywana jest w zbiorczym kontenerze, a w jednostce organizacyjnej lub domenie znajduje się jedynie link do
+    tej zasady.</p>
+    <hr>
+    <h1 id="p10">Kolejność Przetwarzania Zasad:</h1>
+    <p>Priorytet Jednostek Organizacyjnych:</p>
+    <ul>
+      <li>Zasady przypisane do jednostek organizacyjnych mają pierwszeństwo nad ustawieniami domeny.</li>
+      <li>Nawet jeśli domena ma ograniczenie dostępu, a jednostka ma przeciwną politykę, ta ostatnia jest stosowana dla
+      użytkowników w tej jednostce.</li>
+    </ul>
+    <hr>
+    <h1 id="p11">Wdrażanie Zmian w Zasadach:</h1>
+    <ul>
+      <li> <b>Aktualizacja Zasad:</b>
+        <ul>
+          <li>Po modyfikacjach zasad, zalecane jest ręczne wywołanie aktualizacji.</li>
+          <li>Polecenie gpupdate /force wykonywane w konsoli systemowej gwarantuje natychmiastowe zastosowanie zmian.</li>
+          <li>Dla klientów, aktualizacja zasad następuje automatycznie co pewien czas, podczas logowania lub co 90-120 minut.</li>
+        </ul>
+      </li>
+      <li> <b>Edycja Zasad:</b>
+        <ul>
+          <li><b>Otwieranie Okna Edycji:</b>Klikając prawym przyciskiem myszy na GPO lub link i wybierając "Edytuj", otwieramy okno edycji zasad.</li>
+          <li><b>Konfiguracja Ustawień:</b><br>Okno edycji zawiera ustawienia dla użytkowników i komputerów w danej jednostce organizacyjnej. <br>^ Ustawienia komputerów dotyczą urządzeń niezależnie od użytkownika, a ustawienia użytkowników dotyczą użytkowników niezależnie od komputera.</li>
+        </ul>
+      </li>
+      <li> <b>Specyficzne Ustawienia Zasad: DOMYŚLNIE:</b>
+        <ul>
+          <li>Domyślnie zasady działają dla wszystkich użytkowników lub komputerów w jednostce organizacyjnej.</li>
+          <li>Można zmieniać zakres poprzez modyfikację listy Użytkowników Uwierzytelnionych, decydując, dla których użytkowników zasady będą obowiązywać.</li>
+        </ul>
+      </li>
+    </ul>
+    <hr>
+    <h1 id="p12">Zastosowanie uprawnień NTFS</h1>
+    <ul>
+      <li><b>Wielokrotne uprawnienia NTFS:</b>
+        <ul>
+          <li>Uprawnienia NTFS sumują się,</li>
+          <li>Uprawnienia do pliku nadpisują uprawnienia do folderu,</li>
+          <li>Uprawnienia Deny nadpisują pozostałe</li>
+        </ul>
+      </li>
+      <li><b>Dziedziczenie uprawnień NTFS:</b>
+        <ul>
+          <li>Przypisanie uprawnień do folderu nadrzędnego powoduje dziedziczenie uprawnień przez pliki i foldery w nim zawarte.</li>
+          <li>Blokowanie dziedziczenia uprawnień; Folder, dla którego zablokowano dziedziczenie uprawnień stanie się tym samym nowym
+          folderem nadrzędnym</li>
+        </ul>
+      </li>
+      <li><b>Kopiowanie i przenoszenie plików i folderów:</b>
+        <ul>
+          <li>Skopiowanie elementy dziedziczą uprawnienia,</li>
+          <li>Tylko elementy przenoszone w obrębie tej samej partycji zachowują uprawnienia.</li>
+        </ul>
+      </li>
+    </ul>
+    <hr>
+    <h1 id="p13">Zezwolenia uprawnień NTFS:</h1>
+    <ul>
+      <li><b>Full control</b><br>- umożliwia użytkownikom odczytywanie, zapisywanie, zmienianie i usuwanie plików i podfolderów. Ponadto
+      użytkownicy mogą zmieniać ustawienia uprawnień do wszystkich plików i podkatalogów oraz przejmować plik na własność.</li>
+      <li><b>Modify</b><br>- umożliwia użytkownikom odczytywanie i zapisywanie plików i podfolderów; umożliwia także usunięcie folderu.</li>
+      <li><b>Read & execute</b><br>- umożliwia użytkownikom przeglądanie i uruchamianie plików wykonywalnych, w tym skryptów.</li>
+      <li><b>List folder contents</b><br>- umożliwia przeglądanie i wyświetlanie listy plików i podfolderów, a także uruchamianie plików;
+      dziedziczone tylko przez foldery.</li>
+      <li><b>Read</b><br>- umożliwia użytkownikom przeglądanie zawartości folderu i podfolderu.</li>
+      <li><b>Write</b><br>- Umożliwia użytkownikom dodawanie plików i podfolderów, umożliwia zapis do pliku.</li>
+    </ul>
+    <p>EXTRA: <br>
+    <b>Change Permissions</b><br>Uprawnienie to daje możliwość użytkownikowi możliwość zmiany uprawnień dla pliku lub folderu. <br><b>Take Ownership</b><br>Uprawnienie to daje użytkownikowi możliwość stania się właścicielem pliku lub folderu.</p>
+    <hr>
+    <h1 id="p14">Disable inheritance</h1>
+    <p><b>Convert inherited permissions into explicit permissions on this object</b><br>Użytkownicy którzy mieli dostęp będą, mieli dalej dostęp. Najlepiej wybierać tą opcje już na działającym systemie na
+    produkcji.</p>
+    <p><b>Remove all inherited permission from this object</b><br>Usuwa wszystkie nadrzędne pozwolenia. Stosować na systemach testowych.</p>
+    <hr>
+    <h1 id="p15">Klonowanie kontrolerów domeny - Dobre zasady</h1>
+    <ul>
+      <li>Unikaj pojedynczego punktu awarii</li>
+      <li>Synchronizacja czasu</li>
+      - Unikaj checkpoint
+      - Uruchom maksymalnie 10 nowych klonów w tym samym czasie
+      - Konwencja nazewnicza
+    </ul>
+    <hr>
+    <h1 id="p16">Zarządzanie dyskami</h1>
+    <p>Inicjalizacja dysku</p>
+    <p>MBR - nieobsługuje dysków większych niż 2 TB</p>
+    <p>right click windows -&gt; Disk management -&gt; right click disk -&gt; online -&gt; right click disk -&gt; Initialize Disk -&gt; MBR/GPT -&gt; OK</p>
+
+    <p>Tworzenie partycji simple</p>
+    <p>ReFS - format obsługujący bardzo duże dyski, przechowujące iso i obrazy</p>
+    <p>right click windows -&gt; Disk management -&gt; right click disk -&gt; New Simple Volume</p>
+    <p><em>Perform quick format!</em></p>
+
+    <p>Rodzaje partycji:</p>
+    <ul>
+      <li>Striped - Odpowiednik RAID 0 - sumuje pojemność dysków</li>
+      <li>Mirrored - Odpowiednik RAID 1 - jednocześnie zapisuje na wielu dyskach</li>
+      <li>RAID 5 - min.3 dyski - większa prędkość odczytu, gwarancja bezpieczeństwa danych w razie utraty jednego z dysków
+      </li>
+    </ul>
+    <p>Rozszerzanie partycji</p>
+    <p>right click windows -&gt; Disk management -&gt; right click disk -&gt; Extend Volume</p>
+    <p>Tworzenie dysku wirtualnego</p>
+    <p>right click windows -&gt; Disk management -&gt; Action -&gt; Create VHD</p>
+    <p>Montowanie dysku wirtualnego</p>
+    <p>Find place of file -&gt; right click -&gt; mount</p>
+    <p><em>Dyski wirtualne należy inicjalizować!</em></p>
+    <hr>
+    <h1 id="p17">Pula dysków</h1>
+    <p>Tworzenie puli dysków</p>
+    <p>Server manager -&gt; File and Storage Services -&gt; Voumes -&gt; Storage Pools -&gt; Tasks (right corner) -&gt; new Storage Pool</p>
+    <p>Tworzenie wirtualnego dysku w puli</p>
+    <p>pula right click -&gt; new virtual disk -&gt; next -&gt; name of disk -&gt; simple (większa prędkość) / mirror(tworzy kopie) / parity - thin (dynamiczne przydzielanie) /fixed</p>
+    <hr>
+  </main>
+  <div id="access">ACCESS DENIED</div>
+  <footer>WEEK-END DEVELOPMENT<br>Copyright &copy; 2024 </footer>
+  <button id="scrollToTopBtn" ondblclick="scrollToTop()">TOP</button>
+  <script>//setTimeout(function () { window.location.reload(1); }, 5000); // RELOADER</script>
+  <script>
+    var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+    window.addEventListener("scroll", function () {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollToTopBtn.style.display = "block";
+      } else {
+        scrollToTopBtn.style.display = "none";
+      }
+    });
+    function scrollToTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+</body>
+
+</html>

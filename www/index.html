@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Week-end Development">
+  <meta name="keywords" content="WED, Week-end Devs, Week-end development, Week-end Warriors">
+  <meta name="author" content="BO$">
+  <meta name="copyright" content="WEEK-END DEVELOPMENT">
+  <meta name="owner" content="BO$ & Feduniewicz">
+  <title>WEEK-END_DEVS</title>
+  <style>
+    :root {
+      --main-bg-color: #0d0;
+      --main-width: 300px;
+    }
+
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #000, #000, var(--main-bg-color), #000);
+      animation: gradientAnimation 5s linear infinite;
+      background-repeat: repeat-y;
+      background-size: 100% 200%;
+      overflow: hidden;
+      font-family: "consolas";
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 0%;
+      }
+
+      100% {
+        background-position: 0% -200%;
+      }
+    }
+
+    main {
+      height: 100vh;
+      width: 100vw;
+    }
+
+    #bg {
+      height: 110vh;
+      width: 110vw;
+      position: absolute;
+      top: 55%;
+      left: 55%;
+      transform: translate(-55%, -55%);
+      background-image:
+        repeating-linear-gradient(0deg, #0000 -2px, #0000 2px, #000a 3px, #000a 80px),
+        repeating-linear-gradient(90deg, #0000 -2px, #0000 2px, #000a 3px, #000a 80px);
+      background-size: 80px 80px;
+    }
+
+    #bg-shadow {
+      height: 100vh;
+      width: 100vw;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: inset 0 0 500px #000;
+    }
+
+    nav {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      z-index: 8;
+      background: #8880;
+      text-align: center;
+    }
+    h1{
+      font-size: 8rem;
+      color: var(--main-bg-color);
+      font-weight: 800;
+    }
+    h3{
+      margin-top: -2rem;
+      font-size: 3rem;
+      color: var(--main-bg-color);
+      font-weight: 800;
+      text-align: left;
+      left: 50%;
+      transform: translate(-50%);
+      position: relative;
+      width: var(--main-width);
+    }
+    h3 span{
+      position: relative;
+      color: #0d0;
+    }
+    h3 span::before{
+      content: "";
+      right: -8px;
+      top:50%;
+      position: absolute;
+      height: 3rem;
+      width: 2px;
+      background: var(--main-bg-color);
+      transform: translateY(-45%);
+      animation: blink .7s infinite;
+    }
+    h3 span.stop-blinking::before{
+      animation: none;
+    }
+    @keyframes blink {
+      50%{opacity: 0;}
+    }
+    a, a:hover {
+      text-decoration: none;
+      color: #eee;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    a>p{
+      width: var(--main-width);
+    }
+    section{
+      margin-top: 3rem;
+      left: 50%;
+      transform: translate(-50%);
+      position: relative;
+      text-align: left;
+      width: var(--main-width);
+    }
+    footer{
+      bottom: 0;
+      position: sticky;
+      text-align: center;
+      color: var(--main-bg-color);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div id="bg"></div>
+    <div id="bg-shadow"></div>
+  </main>
+  <nav>
+    <h1><span>WEEK-END</span></h1>
+    <h3>&nbsp;<span></span></h3>
+    <section>
+      <a href="./pages/sys-ops.html"><p>Administracja Systemami Operacyjnymi</p></a>
+    </section>
+  </nav>
+  <footer>All rights reserved (c) 2024 Week-End Development</footer>
+  <script type="text/javascript">
+    const dynamicText = document.querySelector("h3 span");
+    const wordList = ["DEVs", "Warriors", "Development", "Developers"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typeEffect = () => {
+      const currentWord = wordList[wordIndex];
+      const currentChar = currentWord.substring(0, charIndex);
+      dynamicText.textContent = currentChar;
+      dynamicText.classList.add("stop-blinking");
+      if(!isDeleting && charIndex < currentWord.length){
+        charIndex++;
+        setTimeout(typeEffect, 200);
+      } else if (isDeleting && charIndex > 0) {
+        charIndex--;
+        setTimeout(typeEffect, 100);
+      } else {
+        isDeleting = !isDeleting;
+        dynamicText.classList.remove("stop-blinking");
+        wordIndex = !isDeleting ? (wordIndex+1)%wordList.length : wordIndex;
+        setTimeout(typeEffect, 1200);
+      }
+    };
+    typeEffect();
+    const root = document.documentElement;
+    const mainText = document.querySelector("h1 span");
+    const spanWidth = mainText.offsetWidth;
+    root.style.setProperty('--main-width', spanWidth+"px");
+
+  //setTimeout(function () { window.location.reload(1); }, 5000); // RELOADER </script>
+</body>
+
+</html>
