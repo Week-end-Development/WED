@@ -19,11 +19,12 @@
 ## Transformacja kamerowa
 To proces określania pozycji obiektu lub robota na podstawie informacji z systemu wizyjnego.
 Te równania pozwalają przeliczać współrzędne rzeczywiste na monitorowe i odwrotnie.
-
-$$ x_r=\frac{a_1*x_m+a_2*y_m+a_3}{a_7*x_m+a_8*y_m+1} $$
-
-$$ y_r=\frac{a_4*x_m+a_5*y_m+a_6}{a_7*x_m+a_8*y_m+1} $$
-
+```math
+x_r=\frac{a_1*x_m+a_2*y_m+a_3}{a_7*x_m+a_8*y_m+1}
+```
+```math
+y_r=\frac{a_4*x_m+a_5*y_m+a_6}{a_7*x_m+a_8*y_m+1}
+```
 $$ \downarrow $$
 
 $$ x_r(i)=a_1x_m(i)+a_2y_m(i)+a_3-a_7x_r(i)x_m(i)-a_8x_r(i)y_m(i) $$
@@ -32,15 +33,19 @@ $$ y_r(i)=a_4x_m(i)+a_5y_m(i)+a_6-a_7x_r(i)x_m(i)-a_8x_r(i)y_m(i) $$
 
 GDZIE:
 
-$$
-x_r,y_r-\text{współrzędne rzeczywiste punktu,} \\
-x_m,y_m-\text{współrzędne monitorowe punktu,} \\
+```math 
+x_r,y_r-\text{współrzędne rzeczywiste punktu,}
+```
+```math
+x_m,y_m-\text{współrzędne monitorowe punktu,}
+```
+```math
 a_1,a_2,a_3,a_4,a_5,a_6,a_7,a_8-\text{współrzędne transformacji.}
-$$
+```
 
 Wzory transformacji uwzględniają współczynniki a1 do a8, które są stałe dla danego ustawienia kamery względem obiektu.
 
-$$
+```math
 \begin{bmatrix}
 x_r(1) & y_m(1) & 1 & 0 & 0 & 0 & -x_r(1)x_m(1) & -x_r(1)y_m(1) \\
 x_r(2) & y_m(2) & 1 & 0 & 0 & 0 & -x_r(2)x_m(2) & -x_r(2)y_m(2) \\
@@ -49,7 +54,7 @@ x_r(4) & y_m(4) & 1 & 0 & 0 & 0 & -x_r(4)x_m(4) & -x_r(4)y_m(4) \\
 0 & 0 & 0 & x_m(1) & y_m(1) & 1 & -y_r(1)x_m(1) & -y_r(1)y_m(1) \\
 0 & 0 & 0 & x_m(2) & y_m(2) & 1 & -y_r(2)x_m(2) & -y_r(2)y_m(2) \\
 0 & 0 & 0 & x_m(3) & y_m(3) & 1 & -y_r(3)x_m(3) & -y_r(3)y_m(3) \\
-0 & 0 & 0 & x_m(4) & y_m(4) & 1 & -y_r(4)x_m(4) & -y_r(4)y_m(4) \\
+0 & 0 & 0 & x_m(4) & y_m(4) & 1 & -y_r(4)x_m(4) & -y_r(4)y_m(4)
 \end{bmatrix}
 *
 \begin{bmatrix}
@@ -73,7 +78,7 @@ y_r(2) \\
 y_r(3) \\
 y_r(4)
 \end{bmatrix}
-$$
+```
 
 Rozwiązanie tego układu pozwala na dokładne określenie współczynników transformacji, co z kolei umożliwia przeliczanie współrzędnych rzeczywistych na podstawie monitorowych i vice versa.
 
@@ -116,7 +121,7 @@ to prosta metoda kompresji danych stosowana w kompresji obrazów i danych teksto
 ## Operacje podstawowe
 $$ + \ \text{pixel on,} \ - \ \text{pixel off}$$
 - **Suma** - Suma dwóch regionów jest regionem posiadającym piksele należące do każdego z wejściowych regionów.
-$$
+```math 
 \begin{bmatrix}
 ++++\\
 ++--\\
@@ -134,10 +139,10 @@ $$
 ++-+\\
 ++-+
 \end{bmatrix}
-$$
+```
 - **Różnica** - Jej
 wynikiem są piksele pierwszego regionu, lecz tylko te, które nie znajdują się w drugim regionie.
-$$
+```math 
 \begin{bmatrix}
 ++++\\
 ++--\\
@@ -155,9 +160,9 @@ $$
 ++--\\
 ++--
 \end{bmatrix}
-$$
+```
 - **Iloczyn** - Część wspólna dwóch regionów jest regionem posiadającym piksele należące równocześnie do obu wejściowych regionów.
-$$
+```math 
 \begin{bmatrix}
 ++++\\
 ++--\\
@@ -175,10 +180,9 @@ $$
 ----\\
 ----
 \end{bmatrix}
-$$
-- **Dopełnienie** - Dopełnienie jest jedyną operacją jednoargumentową dającą
-się zastosować do regionów.
-$$
+```
+- **Dopełnienie** - Dopełnienie jest jedyną operacją jednoargumentową dającą się zastosować do regionów.
+```math 
 \begin{bmatrix}
 ++++\\
 +---\\
@@ -190,11 +194,11 @@ $$
 -+++\\
 -+++
 \end{bmatrix}
-$$
+```
 
 ## Operacje morfologiczne
 - **Jądro** -
-$$
+```math 
 1.
 \begin{bmatrix}
 +++\\
@@ -213,9 +217,9 @@ $$
 -++\\
 -+-
 \end{bmatrix}
-$$
+```
 - **Dylatacja** - Dylatacja jest operacją przeciwną do erozji. Polega na rozszerzaniu obszarów obiektów poprzez dodawanie pikseli do obszaru obiektu na podstawie określonego elementu strukturalnego.
-$$
+```math 
 \begin{bmatrix}
 -------\\
 --+----\\
@@ -237,9 +241,9 @@ $$
 +++++++\\
 -+---+-
 \end{bmatrix}
-$$
+```
 - **Erozja** - to jedna z podstawowych operacji morfologicznych w przetwarzaniu obrazów. Operacja ta polega na zmniejszaniu rozmiaru obiektów na obrazie poprzez usunięcie pikseli z obszarów obiektów. Proces ten jest często wykorzystywany do eliminacji małych detali, zmniejszania rozmiaru obiektów i separowania obiektów od krawędzi.
-$$
+```math 
 \begin{bmatrix}
 --+----\\
 -+++++-\\
@@ -261,9 +265,9 @@ $$
 -+---+-\\
 -------
 \end{bmatrix}
-$$
+```
 - **Otwarcie** - Otwarcie to sekwencja operacji erozji, a następnie dylatacji. Jest skuteczne w usuwaniu drobnych detali i szumów na obrazie oraz oddziela obiekty, które są blisko siebie, ale nie stykają się.
-$$
+```math 
 \begin{bmatrix}
 -----+-\\
 --+----\\
@@ -285,9 +289,9 @@ $$
 +++----\\
 -+-----
 \end{bmatrix}
-$$
+```
 - **Domknięcie** - Domknięcie to sekwencja operacji dylatacji, a następnie erozji. Pomaga w zamykaniu szczelin między obiektami oraz łączeniu obiektów, które są blisko siebie.
-$$
+```math 
 \begin{bmatrix}
 -------\\
 --+----\\
@@ -309,7 +313,7 @@ $$
 -+---+-\\
 -------
 \end{bmatrix}
-$$
+```
 
 ## Histogram
 korekta bitmapy, jak liczyć, do czego?
@@ -377,9 +381,9 @@ Na przykładzie obrazu Leny, wykres histogramu został rozciągnięty na całą 
 ### Zasada wykrywania prostych
 Obraz (np. z kamery) jest reprezentowany przez piksele o współrzędnych kartezjańskich x, y. Prostą można zapisać jako kąt nachylenia $\theta$ i odległość od początku układu współrzędnych $\rho$
 
-$$ x \ cos(\theta)+y \ sin(\theta)=\rho$$
+$$ x \ cos(\theta)+y \ sin(\theta)=\rho $$
 
-Są to też dwie współrzędne, dlatego można utworzyć prostokątny zbiór punktów w układzie współrzędnych $\theta,\rho$ (przestrzeń parametrów), w którym każdy punkt reprezentuje prostą. Ponieważ oryginalny obraz ma ograniczone rozmiary, współrzędne $\theta,\rho$ zbioru punktów reprezentujących proste są ograniczone: $0<\theta<\pi, \ -R<\rho<R$ gdzie  R – przekątna obrazu, więc zbiór ten można ograniczyć, z założoną dokładnością, do skończonej liczby punktów.
+Są to też dwie współrzędne, dlatego można utworzyć prostokątny zbiór punktów w układzie współrzędnych $\theta,\rho$ (przestrzeń parametrów), w którym każdy punkt reprezentuje prostą. Ponieważ oryginalny obraz ma ograniczone rozmiary, współrzędne $\theta,\rho$ zbioru punktów reprezentujących proste są ograniczone: $ 0<\theta<\pi, \ -R<\rho<R $ gdzie  R – przekątna obrazu, więc zbiór ten można ograniczyć, z założoną dokładnością, do skończonej liczby punktów.
 
 ## Integralność obrazu (Integral image)
 **Integralny obraz (integral image)** - to technika przetwarzania obrazu używana do efektywnego obliczania sumy pikseli w określonym obszarze obrazu. Jest szeroko stosowana w algorytmach detekcji obiektów, filtrowania obrazu i przetwarzania obrazów czasu rzeczywistego. Dzięki temu, dla dowolnie dużego obrazu, obliczenia związane z wybranym pikselem są znacznie zredukowane, ograniczając się do operacji bazującej na jedynie czterech pikselach, które definiują obszar.

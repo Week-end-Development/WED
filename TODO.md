@@ -1,5 +1,5 @@
 # LISTA ZADAŃ
-- [ ] Podsumowanie wykładów z Systemów wizyjnych.
+- [x] Podsumowanie wykładów z Systemów wizyjnych.
 - [ ] Podsumowanie wykładów z Testowania aplikacji i systemów.
 - [ ] Podsumowanie wykładów ze Sztucznej Inteligencji
 
