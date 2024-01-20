@@ -15,6 +15,7 @@
 ```
 # SPIS TREŚCI
 1. [Informacje Ogólne](#informacje-ogólne)
+1. [Strona główna](#strona-główna)
 1. [Licencja](#⚠️-licencja)
 1. [Kodeks](#kodeks-postępowania)
 1. [Pomoc](#pomoc-techniczna)
@@ -23,6 +24,9 @@
 ## Informacje Ogólne
 Witaj w repozytorium `"WEEK-END DEVS"`! \
 To repozytorium zawiera zadania i prace domowe dla studentów, zorganizowane w konkretnych katalogach wraz z instrukcjami do wykonania.
+
+## Strona główna
+[WEEK-END_DEVS](https://week-end-development.github.io/WED/)
 
 ## ⚠️ Licencja
 Więcej informacji znajdziesz w pliku LICENSE.md.

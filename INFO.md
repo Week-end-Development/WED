@@ -46,7 +46,7 @@ No.| PRZEDMIOT | TERMIN 0 | TERMIN 1 | TERMIN 2
 ---|:---:|:---:|:---:|:---:
 1  | Podstawy sztucznej inteligencji | 11:55 29.01.2024 P3-206 | 10:00 06.02.2024 P3-206 | 10:00 16.02.2024 P3-206
 2  | Projektowy zespół systemu informatycznego | 16:20 29.01.2023 P5-114 | 12:00 08.02.2024 P5-204 | 12:00 15.02.2024 P5-204
-3  | Dobre praktyki wytwarzania oprogramowania | 15:30 30.01.2024 P5-A1-1 | 10:00 05.02.2024 P5-A1-1 | 10:00 12.02.2024 P5-A1-1
+3  | Dobre praktyki wytwarzania oprogramowania | 15:30 30.01.2024 P5-A-1 | 10:00 05.02.2024 P5-A-1 | 10:00 12.02.2024 P5-A-1
 ## Terminy zaliczeń wykładów
 No.| PRZEDMIOT | TERMIN 0 | TERMIN 1 | TERMIN 2
 ---|:---:|:---:|:---:|:---:
