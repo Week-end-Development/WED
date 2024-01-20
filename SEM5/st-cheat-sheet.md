@@ -22,11 +22,11 @@ $$ \frac{d^2y}{dt^2} + 2\frac{dy}{dt} + 3y - \frac{du}{dt} + u = 0 $$
 
 $$ s^2Y(s) + 2sY(s) + 3Y(s) - sU(s) + U(s) = 0 $$
 
-$$ (s^2+2s+3)Y(s) = (s+1)U(s) $$
+$$ (s^2+2s+3)Y(s) = (s-1)U(s) $$
 
-$$ Y(s)=\frac{s+1}{s^2+2s+3}U(s) $$
+$$ Y(s)=\frac{s-1}{s^2+2s+3}U(s) $$
 
-$$ \text{transmitancja operatorowa}=G(s)=\frac{s+1}{s^2+2s+3} $$
+$$ \text{transmitancja operatorowa}=G(s)=\frac{s-1}{s^2+2s+3} $$
 
 ## 1B. Przekształć transmitancję operatorową na równanie różniczkowe.
 
@@ -80,7 +80,7 @@ $$ y=\frac{1}{10q-9}u $$
 
 $$ y(t)(10q-9)=u(t) $$
 
-$$ 10y(t+1)-9y(t0)=u(t) $$
+$$ 10y(t+1)-9y(t)=u(t) $$
 
 $$ y(t+1)=\frac{u(t)}{10}+\frac{9y(t)}{10} $$
 
