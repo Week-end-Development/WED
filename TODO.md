@@ -1,6 +1,7 @@
 # LISTA ZADAŃ
 - [x] Podsumowanie wykładów z Systemów wizyjnych.
-- [ ] Podsumowanie wykładów z Testowania aplikacji i systemów.
+- [x] Podsumowanie wykładów z Testowania aplikacji i systemów.
+    - [ ] Przetworzenie na przystępną/krótszą wersje. 
 - [ ] Podsumowanie wykładów ze Sztucznej Inteligencji
 
 ## Wytyczne dotyczące Przesyłania Plików
