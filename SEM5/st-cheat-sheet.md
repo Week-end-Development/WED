@@ -1,3 +1,16 @@
+```yaml
+title:        "Teoria systemów"
+author:       "BO$"
+date:         21.01.2024
+keywords:     ["teoria systemów"]
+tags:         ["notes"]
+categories:   ["semester5", "summary"]
+comment:      "Notatki z wykładów."
+copyright:    "All rights reserved (c) 2024 BO$ & WEEK-END DEVELOPMENT"
+organization: "WEEK-END DEVELOPMENT"
+status:       "active"
+version:      2.0
+```
 ```
        All rights reserved (c) 2024 Week-End Development
 ██╗    ██╗███████╗███████╗██╗  ██╗     ███████╗███╗   ██╗██████╗
@@ -6,9 +19,9 @@
 ██║███╗██║██╔══╝  ██╔══╝  ██╔═██╗╚════╝██╔══╝  ██║╚██╗██║██║  ██║
 ╚███╔███╔╝███████╗███████╗██║  ██╗     ███████╗██║ ╚████║██████╔╝
  ╚══╝╚══╝ ╚══════╝╚══════╝╚═╝  ╚═╝     ╚══════╝╚═╝  ╚═══╝╚═════╝
-      ██████╗ ███████╗██╗   ██╗███████╗   Version: 001
-      ██╔══██╗██╔════╝██║   ██║██╔════╝   DATE: 15/01/2024
-      ██║  ██║█████╗  ██║   ██║███████╗   Author: bos-8
+      ██████╗ ███████╗██╗   ██╗███████╗ 
+      ██╔══██╗██╔════╝██║   ██║██╔════╝ 
+      ██║  ██║█████╗  ██║   ██║███████╗ 
       ██║  ██║██╔══╝  ╚██╗ ██╔╝╚════██║
       ██████╔╝███████╗ ╚████╔╝ ███████║
       ╚═════╝ ╚══════╝  ╚═══╝  ╚══════╝   PRESENT:
@@ -57,12 +70,23 @@ $$ s_1=\frac{-b+\sqrt{\Delta}}{2a}=\frac{-1+\sqrt{-3}}{2}=-0.5-i\frac{\sqrt{3}}{
 $$ s_2=\frac{-b-\sqrt{\Delta}}{2a}=\frac{-1-\sqrt{-3}}{2}=-0.5+i\frac{\sqrt{3}}{2}$$
 
 CZY STABILNY?
-> TAK, ponieważ znajduje się po lewej stronie osi Im.
+> TAK, ponieważ bieguny znajdują się po lewej stronie osi Im (mają ujemną część rzeczywistą).
 
 OSCYLACYJNY CZY INERCYJNY?
 > OSCYLACYJNY, ponieważ część urojona jest większa od rzeczywistej.
 
-**Układ jest stabilny, gdy bieguny znajdują się po lewej stronie wykresu.**
+---
+> ## ***NOTE:*** 
+> **Stabilność układu**
+> - Układ jest stabilny, jeśli wszystkie jego bieguny mają ujemną część rzeczywistą (leżą po lewej stronie osi Im).
+> - Jeśli choć jeden biegun leży w prawej półpłaszczyźnie układ może być `niestabilny`.
+>
+> **Układ Inercyjny**
+> - Bieguny leżące na osi urojonej (o zerowej części rzeczywistej) lub mające bardzo małą część urojoną. <br> np.:`-0.1 +/- 0.5i`
+>
+> **Układ Oscylacyjny**
+> - Pary biegunów zespolonych z czysto urojoną częścią rzeczywistą. <br> np.:`0 +/- 2i`
+---
 
 ## 3. Wyznacz 5 kolejnych kroków układu impulsowego.
 Ts - co ile czasu \
@@ -115,3 +139,16 @@ L_3\ \|y-\hat{y}\|_\infty = \sqrt[\infty]{\sum_{i=1}^{n} (y_i-\hat{y}_i)^\infty}
 ```
 
 ## 5. EXTRA (Nyquist)
+Metoda Nyquista stanowi narzędzie matematyczne i graficzne do analizy stabilności układów dynamicznych opisanych funkcjami transmitancji. Charakterystyka Nyquista przedstawia zależność części rzeczywistej i urojonej transmitancji w dziedzinie częstotliwości, co pozwala ocenić stabilność układu.
+
+Wzory charakterystyki Nyquista oparte są na funkcji transmitancji $H(s)$ układu. Ogólny wzór charakterystyki Nyquista to:
+
+$$ G(j\omega)=Re[H(h\omega)]+jIm[H(j\omega)]=H(j\omega) $$
+
+Przykłady funkcji transmitancji obejmują układ inercyjny $H(s) = \frac{K}{s+a}$, gdzie charakterystyka Nyquista jest punktem na osi urojonej o wartości $K$, co wskazuje na stabilność. 
+
+Dla układu oscylacyjnego $H(s) = \frac{K}{(s+a)^2 + b^2}$, charakterystyka Nyquista może obejmować okrążenie punktu (-1, j0), co wskazuje na oscylacje, a stabilność zależy od wartości parametrów $a$ i $b$.
+
+W przypadku układu oscylacyjnego z tłumieniem $H(s) = \frac{K}{(s+a)^2 + (2\zeta a)^2}$, charakterystyka Nyquista również może obejmować okrążenie punktu (-1, j0), z tłumieniem $\zeta$ wpływającym na charakter krzywej.
+
+Analiza charakterystyki Nyquista pozwala ocenić stabilność układu, a kryterium Nyquista mówi, że liczba okrążń punktu (-1, j0) odpowiada liczbie biegunów w prawej półpłaszczyźnie zespolonej. Metoda ta jest szeroko stosowana w teorii sterowania i analizie układów dynamicznych.
