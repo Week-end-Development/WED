@@ -19,7 +19,7 @@
 1. [Licencja](#⚠️-licencja)
 1. [Kodeks](#kodeks-postępowania)
 1. [Pomoc](#pomoc-techniczna)
-1. [Jak dołączyć?](#dołącz-do-week-end-warriors-🚀)
+1. [Jak dołączyć? - Discord](#dołącz-do-week-end-warriors-🚀)
 
 ## Informacje Ogólne
 Witaj w repozytorium `"WEEK-END DEVS"`! \
