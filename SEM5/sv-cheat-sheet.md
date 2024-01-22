@@ -104,7 +104,7 @@ Przykłady zastosowania analizy Blob:
 **Typowe zastosowanie anallizy Blob (kroki):**
 1. **Wydobycie (ang. Extraction)** - region odpowiadający obiektom jest wydobywany z obrazu zazwyczaj poprzez zastosowanie progowania obrazu.
 
-2. **Przetwarzanie (ang. Processing)** -region poddawany jest rozmaitym transformacjom, których celem jest wzmocnienie jego zgodności do właściwego obiektu, bądź uwydatnienie cech, które będą podlegać inspekcji. Podczas tej fazy regin jest często dzielony w połączone ze sobą komponenty, tak, aby każdy z nich mógł osobno podlegać analizie.
+2. **Przetwarzanie (ang. Processing)** -region poddawany jest rozmaitym transformacjom, których celem jest wzmocnienie jego zgodności do właściwego obiektu, bądź uwydatnienie cech, które będą podlegać inspekcji. Podczas tej fazy region jest często dzielony w połączone ze sobą komponenty, tak, aby każdy z nich mógł osobno podlegać analizie.
 3. **Wydobycie cech (ang. Feature Extraction)** - obliczenie numerycznych oraz geometrycznych cech opisujących przetworzone regiony, takie jak średnica, obwód, zwartość, itp. Cechy te mogą być oczekiwanym rezultatem transformacji, lub też mogą być użyte do odróżnienia regionów w celu ich klasyfikacji.
 
 
