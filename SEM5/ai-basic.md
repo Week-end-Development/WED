@@ -36,8 +36,12 @@ $$ A = [0.1/1; 1/2; 0.5/3] $$
 $$ B = [0.1/Kasia; 0.6/Ela; 0.2/Zosia; 1/Basia] $$
 
 Określić **rozszerzenie cylindryczne zbioru A na iloczyn kartezjański** X x Y przestrzeni nierozmytych \
-*Wpisz stopień przynależności elementu (3,Zosia) do rozszerz*
+*Wpisz stopień przynależności elementu (3,Zosia) do rozszerz...*
 
+> Pytanie otwarte
+
+
+> **Prawdopodobna odp.:**
 
 Dla przykładu, dla pary (3, Zosia):
 
@@ -58,18 +62,23 @@ Wtedy:
 $$ \mu_{A \times B}(3, Zosia) = \min(0.5, 0.2) = 0.2 $$
 
 
-> **Odp.:** Stopień przynależności elementu (3, Zosia) do rozszerzenia cylindrycznego zbioru A na iloczyn kartezjański X x Y wynosi 0.2.
+> Stopień przynależności elementu (3, Zosia) do rozszerzenia cylindrycznego zbioru A na iloczyn kartezjański X x Y wynosi 0.2.
 
 
 ---
 ### W algorytmie genetycznym funkcja _ zwraca liczbę będącą oceną jakości danego rozwiązania.
 
-> **Odp.:** CELU
+> Pytanie otwarte
+
+> **Prawdopodobna odp.:** CELU
 
 ---
 ### Uczenie głębokie jest rodzajem uczenia maszynowego, a uczenie maszynowe jest techniką sztucznej inteligencji.
 
-> **Odp.:** PRAWDA
+> Prawda
+> Fałsz
+
+> **Prawdopodobna odp.:** PRAWDA
 
 > [!CAUTION]
 > Week-end Development nie gwarantuje poprawności powyższych odpowiedzi.
