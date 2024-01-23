@@ -1,11 +1,11 @@
 ```yaml
 title:        "Testowanie aplikacji i systemów"
-author:       ["BO$"]
+author:       ["BO$ & Nikovsky"]
 date:         23.01.2024
 keywords:     ["testowanie", "testowanie aplikacji"]
 tags:         ["notes"]
 categories:   ["semester5", "summary"]
-comment:      "Notatki z wykładów."
+comment:      "Zagadnienia do zaliczenia."
 copyright:    "All rights reserved (c) 2024 WEEK-END DEVELOPMENT"
 organization: "WEEK-END DEVELOPMENT"
 status:       "in-progress"
@@ -28,7 +28,7 @@ version:      2.0
 ```
 
 # Możliwe zagadnienia / pytania - Testowanie aplikacji i systemów
-- mock vs stab
+- ~~mock vs stab~~
 - testy automatyczne
 - metodyki wytwarzania oprogramowania (waterfall Agile)
 - narzędzia do testowania
@@ -54,6 +54,20 @@ version:      2.0
 
 ## Mock vs Stab
 > Mocki i Stuby mają bardzo podobne przeznaczenie, natomiast istnieje ważna różnica pomiędzy nimi.
+> 
+>W praktyce używa się zarówno mocków, jak i stabs, w zależności od konkretnych potrzeb testu jednostkowego i stopnia kontroli, jaki chcemy utrzymać.
+
+### Różnice Mock vs Stab:
+| Kryterium | Mock | Stab |
+| :--: | :--: | :--: |
+| **Definicja** | Symuluje zachowanie rzeczywistego obiektu. | Prosty obiekt zastępczy, używany do dostarczenia wymaganych interfejsów. |
+| **Działanie** | Programowo kontrolowany, symuluje rzeczywiste zachowanie obiektu. | Minimalne zachowanie, spełnia jedynie wymagania interfejsu. |
+| **Przykład** | Mock bazy danych, symuluje operacje bazodanowe. | Stab pliku, spełnia wymagania interfejsu, bez rzeczywistej logiki. |
+| **Zalety** | Elastyczność i kontrola w testowaniu interakcji. | Proste w użyciu, szybkie do wdrożenia. |
+| **Wady** | Czasochłonny w konfiguracji i utrzymaniu. | Brak kontroli nad zachowaniem obiektu, nie nadaje się do testowania interakcji. |
+| **Kontrola vs Minimalna Implementacja** | Dają pełną kontrolę nad zachowaniem obiektu i pozwalają na dokładne określenie, jakie metody powinny być wywołane. | Dostarczają minimalnej implementacji obiektu, która po prostu pozwala na zastąpienie rzeczywistej zależności. |
+| **Precyzja vs Prostota** | Są bardziej precyzyjne i są używane, gdy chcemy dokładnie kontrolować interakcje z obiektem. | Są prostsze, używane w sytuacjach, gdzie zależy nam głównie na zastąpieniu zależności. |
+| **Kontrola Wyników vs Minimalna Reakcja** | Pozwalają na kontrolę wyników i działanie obiektu w sposób ściśle określony przez test. | Są bardziej reaktywne, dostarczając minimalnej reakcji na wywołania, zazwyczaj bez zbytniego zainteresowania wynikami. |
 
 #### **Mock** 
 1. **Definicja**:
@@ -80,3 +94,27 @@ version:      2.0
 3. **Zastosowanie**:
    - Staby są używane, gdy testujemy fragmenty kodu, które wymagają obiektów, ale nie koncentrujemy się na ich funkcjonalności.
    - Testowanie jednostkowe, gdy zależy nam na zastąpieniu zależności, ale nie musimy kontrolować interakcji z nią.
+
+## Testy automatyczne
+Testy automatyczne to proces, w którym narzędzia i skrypty są używane do wykonania testów, zamiast wykonywania ich ręcznie. Automatyzacja testów przyspiesza proces testowania, zwiększa powtarzalność i umożliwia szybkie wykrywanie błędów. W przypadku aplikacji internetowych istnieją narzędzia, zarówno komercyjne, jak i darmowe, dedykowane do tworzenia testów automatycznych. Decyzja o zautomatyzowaniu testu zależy od różnych czynników, takich jak plany na przyszłość, stabilność aplikacji i potrzeba przeprowadzania testów regresji. Jednak niektóre elementy, takie jak zabezpieczenia CAPTCHA, są celowo projektowane, aby uniemożliwić automatyzację ich obsługi.
+
+### Zalety testowania automatycznego  
+| Korzyści:                                     |
+| ------------------------------------------------------------------ |
+|  Możliwość szybkiej i wydajnej weryfikacji poprawek błędów        |
+|  Możliwość odtworzenia testu, co jest bardzo przydatne zwłaszcza jeżeli chcemy sprawdzić, czy wskazywane błędy zostały usunięte   |
+|  Możliwość kompleksowej analizy wyników testów                   |
+|  Szybsze i tańsze tworzenie sprawozdań                           |
+|  Szybsze wprowadzanie testów (krótki czas realizacji)            |
+|  Nieomylność przy wprowadzaniu danych                            |
+|  Możliwość podania dużej liczby danych testowych                 |
+|  Niska cena przeprowadzenia pojedyńczego testu                     |
+
+### Przykładowe rodzaje testów automatycznych
+* **Testy Jednostkowe**
+* **Testy integracyjne (Integration Testing)**
+* **Testy funkcjonalne (Functional Testing)**
+* **Testy wydajności (Performance Testing)**
+* **Testy regresji (Regression Testing)**
+* **Testy akceptacji użytkownika (User Acceptance Testing, UAT)**
+* **Testy typu smoke (Smoke testing)**
