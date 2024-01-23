@@ -415,7 +415,13 @@ Obraz (np. z kamery) jest reprezentowany przez piksele o współrzędnych kartez
 
 $$ x \ cos(\theta)+y \ sin(\theta)=\rho $$
 
-Są to też dwie współrzędne, dlatego można utworzyć prostokątny zbiór punktów w układzie współrzędnych $\theta,\rho$ (przestrzeń parametrów), w którym każdy punkt reprezentuje prostą. Ponieważ oryginalny obraz ma ograniczone rozmiary, współrzędne $\theta,\rho$ zbioru punktów reprezentujących proste są ograniczone: $ 0<\theta<\pi, \ -R<\rho<R $ gdzie  R – przekątna obrazu, więc zbiór ten można ograniczyć, z założoną dokładnością, do skończonej liczby punktów.
+Są to też dwie współrzędne, dlatego można utworzyć prostokątny zbiór punktów w układzie współrzędnych $\theta,\rho$ (przestrzeń parametrów), w którym każdy punkt reprezentuje prostą. Ponieważ oryginalny obraz ma ograniczone rozmiary, współrzędne $\theta,\rho$ zbioru punktów reprezentujących proste są ograniczone: 
+
+```math
+0 < \theta < \pi, \ -R < \rho < R
+```
+
+ gdzie  R – przekątna obrazu, więc zbiór ten można ograniczyć, z założoną dokładnością, do skończonej liczby punktów.
 
 ## Integralność obrazu (Integral image)
 **Integralny obraz (integral image)** - to technika przetwarzania obrazu używana do efektywnego obliczania sumy pikseli w określonym obszarze obrazu. Jest szeroko stosowana w algorytmach detekcji obiektów, filtrowania obrazu i przetwarzania obrazów czasu rzeczywistego. Dzięki temu, dla dowolnie dużego obrazu, obliczenia związane z wybranym pikselem są znacznie zredukowane, ograniczając się do operacji bazującej na jedynie czterech pikselach, które definiują obszar.
