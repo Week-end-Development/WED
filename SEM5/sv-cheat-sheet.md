@@ -1,3 +1,16 @@
+```yaml
+title:        "Systemy wizyjne"
+author:       ["BO$","Nikosky"]
+date:         23-01-2024
+keywords:     ["systemy wizyjne"]
+tags:         ["notes"]
+categories:   ["semester5", "summary"]
+comment:      "Notatki z wykładów."
+copyright:    "All rights reserved (c) 2024 WEEK-END DEVELOPMENT"
+organization: "WEEK-END DEVELOPMENT"
+status:       "active"
+version:      2.0
+```
 ```
        All rights reserved (c) 2024 Week-End Development
 ██╗    ██╗███████╗███████╗██╗  ██╗     ███████╗███╗   ██╗██████╗
@@ -6,15 +19,36 @@
 ██║███╗██║██╔══╝  ██╔══╝  ██╔═██╗╚════╝██╔══╝  ██║╚██╗██║██║  ██║
 ╚███╔███╔╝███████╗███████╗██║  ██╗     ███████╗██║ ╚████║██████╔╝
  ╚══╝╚══╝ ╚══════╝╚══════╝╚═╝  ╚═╝     ╚══════╝╚═╝  ╚═══╝╚═════╝
-      ██████╗ ███████╗██╗   ██╗███████╗   Version: 001
-      ██╔══██╗██╔════╝██║   ██║██╔════╝   DATE: 17/01/2024
-      ██║  ██║█████╗  ██║   ██║███████╗   Author: bos-8
-      ██║  ██║██╔══╝  ╚██╗ ██╔╝╚════██║         & Nikosky
+      ██████╗ ███████╗██╗   ██╗███████╗
+      ██╔══██╗██╔════╝██║   ██║██╔════╝
+      ██║  ██║█████╗  ██║   ██║███████╗
+      ██║  ██║██╔══╝  ╚██╗ ██╔╝╚════██║
       ██████╔╝███████╗ ╚████╔╝ ███████║
       ╚═════╝ ╚══════╝  ╚═══╝  ╚══════╝   PRESENT:
 ```
 # SYSTEMY WIZYJNE
 ***10/2023 - 01/2024***
+
+## ZAWARTOŚĆ
+1. [Transformacja kamerowa](#transformacja-kamerowa)
+1. [Analiza BLOB](#analiza-blob)
+1. **OBRAZ**
+    - [Binarny uint8](#obraz-binarny-uint8)
+    - [Binarny 1bit](#obraz-binarny-1-bit)
+1. [Kodowanie Bieżących długości (RLE)](#kodowanie-bieżących-długości-rle)
+1. [Operacje podstawowe](#operacje-podstawowe)
+1. [Operacje morfologiczne](#operacje-morfologiczne)
+1. [Histogram](#histogram)
+    - [Kontrast](#kontrast)
+    - [Jasność](#jasność)
+        - [Korekta jasności](#korekta-jasności)
+    - [Ostrość](#ostrość)
+    - [Saturacja](#saturacja)
+1. [Transformacja Hougha](#transformacja-hougha)
+    - [Zasady wykrywania prostych](#zasada-wykrywania-prostych)
+1. [Integralność obrazu](#integralność-obrazu-integral-image)
+1. **EXTRA**
+    - [Proces konfiguracji systemu wizyjnego](#schemat-blokowy-procesu-konfiguracji-systemu-wizyjnego)
 
 ## Transformacja kamerowa
 To proces określania pozycji obiektu lub robota na podstawie informacji z systemu wizyjnego.
@@ -33,7 +67,7 @@ $$ y_r(i)=a_4x_m(i)+a_5y_m(i)+a_6-a_7x_r(i)x_m(i)-a_8x_r(i)y_m(i) $$
 
 GDZIE:
 
-```math 
+```math
 x_r,y_r-\text{współrzędne rzeczywiste punktu,}
 ```
 ```math
@@ -121,7 +155,7 @@ to prosta metoda kompresji danych stosowana w kompresji obrazów i danych teksto
 ## Operacje podstawowe
 $$ + \ \text{pixel on,} \ - \ \text{pixel off}$$
 - **Suma** - Suma dwóch regionów jest regionem posiadającym piksele należące do każdego z wejściowych regionów.
-```math 
+```math
 \begin{bmatrix}
 ++++\\
 ++--\\
@@ -142,7 +176,7 @@ $$ + \ \text{pixel on,} \ - \ \text{pixel off}$$
 ```
 - **Różnica** - Jej
 wynikiem są piksele pierwszego regionu, lecz tylko te, które nie znajdują się w drugim regionie.
-```math 
+```math
 \begin{bmatrix}
 ++++\\
 ++--\\
@@ -162,7 +196,7 @@ wynikiem są piksele pierwszego regionu, lecz tylko te, które nie znajdują si�
 \end{bmatrix}
 ```
 - **Iloczyn** - Część wspólna dwóch regionów jest regionem posiadającym piksele należące równocześnie do obu wejściowych regionów.
-```math 
+```math
 \begin{bmatrix}
 ++++\\
 ++--\\
@@ -182,7 +216,7 @@ wynikiem są piksele pierwszego regionu, lecz tylko te, które nie znajdują si�
 \end{bmatrix}
 ```
 - **Dopełnienie** - Dopełnienie jest jedyną operacją jednoargumentową dającą się zastosować do regionów.
-```math 
+```math
 \begin{bmatrix}
 ++++\\
 +---\\
@@ -198,7 +232,7 @@ wynikiem są piksele pierwszego regionu, lecz tylko te, które nie znajdują si�
 
 ## Operacje morfologiczne
 - **Jądro** -
-```math 
+```math
 1.
 \begin{bmatrix}
 +++\\
@@ -219,7 +253,7 @@ wynikiem są piksele pierwszego regionu, lecz tylko te, które nie znajdują si�
 \end{bmatrix}
 ```
 - **Dylatacja** - Dylatacja jest operacją przeciwną do erozji. Polega na rozszerzaniu obszarów obiektów poprzez dodawanie pikseli do obszaru obiektu na podstawie określonego elementu strukturalnego.
-```math 
+```math
 \begin{bmatrix}
 -------\\
 --+----\\
@@ -243,7 +277,7 @@ wynikiem są piksele pierwszego regionu, lecz tylko te, które nie znajdują si�
 \end{bmatrix}
 ```
 - **Erozja** - to jedna z podstawowych operacji morfologicznych w przetwarzaniu obrazów. Operacja ta polega na zmniejszaniu rozmiaru obiektów na obrazie poprzez usunięcie pikseli z obszarów obiektów. Proces ten jest często wykorzystywany do eliminacji małych detali, zmniejszania rozmiaru obiektów i separowania obiektów od krawędzi.
-```math 
+```math
 \begin{bmatrix}
 --+----\\
 -+++++-\\
@@ -267,7 +301,7 @@ wynikiem są piksele pierwszego regionu, lecz tylko te, które nie znajdują si�
 \end{bmatrix}
 ```
 - **Otwarcie** - Otwarcie to sekwencja operacji erozji, a następnie dylatacji. Jest skuteczne w usuwaniu drobnych detali i szumów na obrazie oraz oddziela obiekty, które są blisko siebie, ale nie stykają się.
-```math 
+```math
 \begin{bmatrix}
 -----+-\\
 --+----\\
@@ -291,7 +325,7 @@ wynikiem są piksele pierwszego regionu, lecz tylko te, które nie znajdują si�
 \end{bmatrix}
 ```
 - **Domknięcie** - Domknięcie to sekwencja operacji dylatacji, a następnie erozji. Pomaga w zamykaniu szczelin między obiektami oraz łączeniu obiektów, które są blisko siebie.
-```math 
+```math
 \begin{bmatrix}
 -------\\
 --+----\\
@@ -316,7 +350,19 @@ wynikiem są piksele pierwszego regionu, lecz tylko te, które nie znajdują si�
 ```
 
 ## Histogram
-korekta bitmapy, jak liczyć, do czego?
+Używany do analizy rozkładu intensywności pikseli w obrazie i dokonywania odpowiednich dostosowań w celu poprawy ekspozycji, kontrastu i balansu kolorów. Innymi słowy, odpowiednie pytanie, ile pikseli w bitmapie posiada konkretną jasność. W analizowanych bitmapach jasność pikseli może zmieniać się w zakresie między 0 a 255 – wynika więc z założenia, że histogram dotyczy albo bitmapy w skali szarości, albo badamy histogram w każdym kanale oddzielnie.
+
+Przykładowe zastosowania histogramu obejmują:
+
+- Korekcję ekspozycji, gdzie można dostosować krzywą tonalną, aby poprawić równomierne rozłożenie jasności w obrazie.
+- Korekcję kontrastu, pozwala na rozciągnięcie zakresu tonalnego, aby zwiększyć różnicę między jasnymi i ciemnymi obszarami obrazu.
+- Korekcję balansu kolorów, pozwala na identyfikację przewagi pewnych kolorów i dostosowanie ich proporcji w celu uzyskania bardziej neutralnego lub pożądanego efektu kolorystycznego.
+- Korekcję przetwarzania nieliniowego, może posłużyć do manipulacji krzywymi tonalnymi, takimi jak korekcja gamma.
+
+Na przykładzie obrazu Leny, wykres histogramu został rozciągnięty na całą długość, co spowodowało zwiększenie zakresu kolorów, a tym samym uczyniło obraz bardziej żywym i dynamicznym.
+
+> **IN PILL** \
+> Histogram obrazu służy do analizy rozkładu intensywności pikseli w zakresie jasności od 0 do 255. Pozwala na dostosowania, takie jak korekcja ekspozycji, kontrastu i balansu kolorów. Przy użyciu histogramu można manipulować krzywymi tonalnymi, co umożliwia poprawę równomiernego rozkładu jasności w obrazie i uzyskanie pożądanych efektów w obróbce obrazu.
 
 ### Kontrast
 Kontrast określa różnicę między najjaśniejszymi a najciemniejszymi obszarami obrazu.
@@ -340,8 +386,6 @@ GDZIE:
 - h - jasność danego pixela,
 - h' - nowa jasność po korekcie
 
-
-
 ### Ostrość
 Ostrość w kontekście przetwarzania obrazów odnosi się do stopnia kontrastu między pikselami sąsiadującymi.
 
@@ -363,18 +407,6 @@ GDZIE:
 - Min to minimalna wartość kanału koloru.
 
 Wzory te pozwalają na ilościową ocenę ostrości oraz saturacji obrazu, co może być istotne w analizie wizyjnej, przetwarzaniu obrazów medycznych, grafice komputerowej i wielu innych dziedzinach.
-
-## HISTOGRAM
-Używany do analizy rozkładu intensywności pikseli w obrazie i dokonywania odpowiednich dostosowań w celu poprawy ekspozycji, kontrastu i balansu kolorów. Innymi słowy, odpowiednie pytanie, ile pikseli w bitmapie posiada konkretną jasność. W analizowanych bitmapach jasność pikseli może zmieniać się w zakresie między 0 a 255 – wynika więc z założenia, że histogram dotyczy albo bitmapy w skali szarości, albo badamy histogram w każdym kanale oddzielnie.
-
-Przykładowe zastosowania histogramu obejmują:
-
-- Korekcję ekspozycji, gdzie można dostosować krzywą tonalną, aby poprawić równomierne rozłożenie jasności w obrazie.
-- Korekcję kontrastu, pozwala na rozciągnięcie zakresu tonalnego, aby zwiększyć różnicę między jasnymi i ciemnymi obszarami obrazu.
-- Korekcję balansu kolorów, pozwala na identyfikację przewagi pewnych kolorów i dostosowanie ich proporcji w celu uzyskania bardziej neutralnego lub pożądanego efektu kolorystycznego.
-- Korekcję przetwarzania nieliniowego, może posłużyć do manipulacji krzywymi tonalnymi, takimi jak korekcja gamma.
-
-Na przykładzie obrazu Leny, wykres histogramu został rozciągnięty na całą długość, co spowodowało zwiększenie zakresu kolorów, a tym samym uczyniło obraz bardziej żywym i dynamicznym.
 
 ## Transformacja Hougha
 (ang. Hough transform) – metoda wykrywania regularnych kształtów w widzeniu komputerowym.
