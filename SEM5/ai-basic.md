@@ -27,6 +27,8 @@ version:      1.0
       ╚═════╝ ╚══════╝  ╚═══╝  ╚══════╝  PRESENT:
 ```
 
+> [!CAUTION] WEEK-END DEVELOPMENT <br> Nie gwarantuje poprawności odpowiedzi!
+
 # Pytania
 
 ### Zbiór rozmyty A jest określony w przestrzeni dyskretnej X, a zbiór rozmyty B jest określony w przestrzeni dyskretnej Y:
@@ -79,6 +81,3 @@ $$ \mu_{A \times B}(3, Zosia) = \min(0.5, 0.2) = 0.2 $$
 > Fałsz
 
 > **Prawdopodobna odp.:** PRAWDA
-
-> [!CAUTION]
-> Week-end Development nie gwarantuje poprawności powyższych odpowiedzi.
