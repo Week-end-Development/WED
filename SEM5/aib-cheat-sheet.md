@@ -26,7 +26,9 @@ version:      1.1
       ██████╔╝███████╗ ╚████╔╝ ███████║
       ╚═════╝ ╚══════╝  ╚═══╝  ╚══════╝  PRESENT:
 ```
-> [!WARNING] MOŻLIWE BŁĘDY I NIEDOSKONAŁOŚCI
+> [!WARNING]
+> ***MOŻLIWE BŁĘDY I NIEDOSKONAŁOŚCI***
+>
 > Plik może zawierać **błędy** i **być niekompletny** z powodu ograniczonej kadry, czasu i niewielkiego udziału studentów. Zaleca się ostrożność i dodatkową weryfikację, a także zachęca do kontaktu w razie pytań lub uwag.
 
 - [Inteligencja](#inteligencja)

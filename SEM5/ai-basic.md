@@ -27,7 +27,10 @@ version:      1.0
       ╚═════╝ ╚══════╝  ╚═══╝  ╚══════╝  PRESENT:
 ```
 
-> [!CAUTION] WEEK-END DEVELOPMENT <br> Nie gwarantuje poprawności odpowiedzi!
+> [!CAUTION]
+> ***WEEK-END DEVELOPMENT ***
+>
+> Nie gwarantuje poprawności odpowiedzi!
 
 # Pytania
 
