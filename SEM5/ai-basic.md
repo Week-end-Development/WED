@@ -28,7 +28,7 @@ version:      1.0
 ```
 
 > [!CAUTION]
-> ***WEEK-END DEVELOPMENT ***
+> **WEEK-END DEVELOPMENT**
 >
 > Nie gwarantuje poprawności odpowiedzi!
 
