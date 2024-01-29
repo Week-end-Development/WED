@@ -1,6 +1,6 @@
 ```yaml
 title:        "Testowanie aplikacji i systemów"
-author:       ["BO$ & Nikovsky"]
+author:       ["BO$", "Nikovsky"]
 date:         23.01.2024
 keywords:     ["testowanie", "testowanie aplikacji"]
 tags:         ["notes"]
@@ -54,7 +54,7 @@ version:      2.0
 
 ## Mock vs Stab
 > Mocki i Stuby mają bardzo podobne przeznaczenie, natomiast istnieje ważna różnica pomiędzy nimi.
-> 
+>
 >W praktyce używa się zarówno mocków, jak i stabs, w zależności od konkretnych potrzeb testu jednostkowego i stopnia kontroli, jaki chcemy utrzymać.
 
 ### Różnice Mock vs Stab:
@@ -69,7 +69,7 @@ version:      2.0
 | **Precyzja vs Prostota** | Są bardziej precyzyjne i są używane, gdy chcemy dokładnie kontrolować interakcje z obiektem. | Są prostsze, używane w sytuacjach, gdzie zależy nam głównie na zastąpieniu zależności. |
 | **Kontrola Wyników vs Minimalna Reakcja** | Pozwalają na kontrolę wyników i działanie obiektu w sposób ściśle określony przez test. | Są bardziej reaktywne, dostarczając minimalnej reakcji na wywołania, zazwyczaj bez zbytniego zainteresowania wynikami. |
 
-#### **Mock** 
+#### **Mock**
 1. **Definicja**:
    - Obiekt zastępczy (fake object), który symuluje zachowanie rzeczywistego obiektu. Jest tworozny w taki sposób, aby zachowywać się jak prawdziwy obiekt w kontekście testowanego kodu.
    - Mocki są tworzone w celu imitowania interakcji z obiektami, takimi jak bazy danych, serwisy internetowe lub inne zasoby zewnętrzne.
@@ -82,7 +82,7 @@ version:      2.0
 3. **Zastosowanie**:
    - Często używane w testach jednostkowych do sprawdzania, czy metody są wywoływane z oczekiwanymi parametrami lub czy obiekty reagują zgodnie z oczekiwaniami.
 
-#### **Stabs (inaczej Dummy lub Test Stub)** 
+#### **Stabs (inaczej Dummy lub Test Stub)**
 1. **Definicja**:
    - jest prostszym z tych dwóch obiektów (Stabs i Mock). Jego rolą jest symulowanie danych wejściowych i zapewnie, że testowana metoda przyjmująca w argumencie taki obiekt wykona się w żadany sposób.
    - Do stworzenia stuba nie jest wymagany żaden framework. Wymagana jest tylko wiedza o interfejsie bądź klasie abstrakcyjnej na bazie, której się chce stworzyć stuba oraz o tym jak go przekazać do testowanej klasy.
@@ -98,7 +98,7 @@ version:      2.0
 ## Testy automatyczne
 Testy automatyczne to proces, w którym narzędzia i skrypty są używane do wykonania testów, zamiast wykonywania ich ręcznie. Automatyzacja testów przyspiesza proces testowania, zwiększa powtarzalność i umożliwia szybkie wykrywanie błędów. W przypadku aplikacji internetowych istnieją narzędzia, zarówno komercyjne, jak i darmowe, dedykowane do tworzenia testów automatycznych. Decyzja o zautomatyzowaniu testu zależy od różnych czynników, takich jak plany na przyszłość, stabilność aplikacji i potrzeba przeprowadzania testów regresji. Jednak niektóre elementy, takie jak zabezpieczenia CAPTCHA, są celowo projektowane, aby uniemożliwić automatyzację ich obsługi.
 
-### Zalety testowania automatycznego  
+### Zalety testowania automatycznego
 | Korzyści:                                     |
 | ------------------------------------------------------------------ |
 |  Możliwość szybkiej i wydajnej weryfikacji poprawek błędów        |
