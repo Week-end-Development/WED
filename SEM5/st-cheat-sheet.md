@@ -29,6 +29,7 @@ version:      2.0
 # TEORIA SYSTEMÓW
 ***10/2023 - 01/2024***
 
+---
 ## 1A. Przekształć równanie różniczkowe na transmitancje operatorową (0 warunek początkowy).
 
 $$ \frac{d^2y}{dt^2} + 2\frac{dy}{dt} + 3y - \frac{du}{dt} + u = 0 $$
@@ -41,6 +42,7 @@ $$ Y(s)=\frac{s-1}{s^2+2s+3}U(s) $$
 
 $$ \text{transmitancja operatorowa}=G(s)=\frac{s-1}{s^2+2s+3} $$
 
+---
 ## 1B. Przekształć transmitancję operatorową na równanie różniczkowe.
 
 $$ G(s)=\frac{1}{s^2+2} $$
@@ -55,6 +57,7 @@ $$ s^2Y(s)+2Y(s)-U(S)=0 $$
 
 $$ \text{równanie różniczkowe}=\frac{d^2y}{dt^2}+2y-u=0 $$
 
+---
 ## 2. Dla podanej transmitancji operatorowej określ stabilność układu, przedstaw bieguny na osi oraz określ czy jest oscylacyjny czy inercyjny.
 
 $$ G(s)=\frac{1}{s^2+s+1} $$
@@ -76,7 +79,7 @@ OSCYLACYJNY CZY INERCYJNY?
 > OSCYLACYJNY, ponieważ część urojona jest większa od rzeczywistej.
 
 ---
-> ## ***NOTE:*** 
+> [!TIP]
 > **Stabilność układu**
 > - Układ jest stabilny, jeśli wszystkie jego bieguny mają ujemną część rzeczywistą (leżą po lewej stronie osi Im).
 > - Jeśli choć jeden biegun leży w prawej półpłaszczyźnie układ może być `niestabilny`.
@@ -86,8 +89,8 @@ OSCYLACYJNY CZY INERCYJNY?
 >
 > **Układ Oscylacyjny**
 > - Pary biegunów zespolonych z czysto urojoną częścią rzeczywistą. <br> np.:`0 +/- 2i`
----
 
+---
 ## 3. Wyznacz 5 kolejnych kroków układu impulsowego.
 Ts - co ile czasu \
 q - operator przesunięcia do przodu
@@ -116,6 +119,7 @@ $$ y(2)=0.1u(1)+0.9y(1)=0.19 $$
 
 $$ y(3)=0.1u(2)+0.9y(2)=0.271 $$
 
+---
 ## 4. Wylicz błędy dla danych z tabeli.
 
 y  |$$\hat{y}$$|$$\|\|y-\hat{y}\|\|$$|$$(y_i-\hat{y}_i)^2$$
@@ -137,7 +141,7 @@ L_2\ \|y-\hat{y}\|_2 = \sqrt{\sum_{i=1}^{n} (y_i-\hat{y}_i)^2} = \sqrt{2}
 ```math
 L_3\ \|y-\hat{y}\|_\infty = \sqrt[\infty]{\sum_{i=1}^{n} (y_i-\hat{y}_i)^\infty} = \max(|y-\hat{y}|) = 1
 ```
-
+---
 ## 5. EXTRA (Nyquist)
 Metoda Nyquista stanowi narzędzie matematyczne i graficzne do analizy stabilności układów dynamicznych opisanych funkcjami transmitancji. Charakterystyka Nyquista przedstawia zależność części rzeczywistej i urojonej transmitancji w dziedzinie częstotliwości, co pozwala ocenić stabilność układu.
 
