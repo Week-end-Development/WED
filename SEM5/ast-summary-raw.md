@@ -9,7 +9,7 @@ comment:      "Notatki z wykładów."
 copyright:    "All rights reserved (c) 2024 BO$ & WEEK-END DEVELOPMENT"
 organization: "WEEK-END DEVELOPMENT"
 status:       "raw"
-version:      2.0
+version:      3.0
 ```
 ```
        All rights reserved (c) 2024 Week-End Development
@@ -26,7 +26,11 @@ version:      2.0
       ██████╔╝███████╗ ╚████╔╝ ███████║
       ╚═════╝ ╚══════╝  ╚═══╝  ╚══════╝  PRESENT:
 ```
-
+> [!WARNING]
+> ***MOŻLIWE BŁĘDY I NIEDOSKONAŁOŚCI***
+>
+> Plik może zawierać **błędy** i **być niekompletny** z powodu ograniczonej kadry, czasu, użycia Chatu GPT 3.5 do opracowania części tematów i niewielkiego udziału studentów. Zaleca się ostrożność i dodatkową weryfikację, a także zachęca do kontaktu w razie pytań lub uwag.
+>
 ***WYKŁAD01--------------------------------------------***
 
 # Co można testować?
@@ -753,8 +757,6 @@ Algorytm genetyczny pozwala na efektywne przeszukiwanie przestrzeni rozwiązań 
 
 
 # POZIOMY TESTÓW
-Niestety, nie mam możliwości wyświetlenia rysunków czy grafik.
-
 1. **Poziom jednostkowy (modułowy):**
     - Testowanie indywidualnych jednostek kodu lub modułów.
     - Sprawdzenie poprawności działania pojedynczych funkcji lub procedur.
