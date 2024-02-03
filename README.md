@@ -22,10 +22,12 @@
   - [TABLICA INFORMACYJNA (zaliczenia 2024)](#tablica-informacyjna-zaliczenia-2024)
   - [Pomoc techniczna](#pomoc-techniczna)
   - [Dołącz do "WEEK-END WARRIORS" 🚀](#dołącz-do-week-end-warriors-)
+    - [Szukasz ekskluzywnych treści? (Zadania, gotowce itp.)](#szukasz-ekskluzywnych-treści-zadania-gotowce-itp)
 
 ## Informacje Ogólne
 Witaj w repozytorium `"WEEK-END DEVS"`! \
 To repozytorium zawiera zadania i prace domowe dla studentów, zorganizowane w konkretnych katalogach wraz z instrukcjami do wykonania.
+"Ekskluzywne" treści dostępne na naszym discordzie ;)
 
 ## Strona główna
 [WEEK-END_DEVS](https://week-end-development.github.io/WED/)
@@ -73,6 +75,9 @@ Czy jesteś studentem z pasją do kodowania? Czy posiadasz smykałkę do program
     Więcej informacji znajdziesz w pliku TODO.md.
 2. Dołącz do naszej społeczności na platformie [DISCORD](https://discord.com/invite/PDfx93dxq3)
 3. Zostaw swój ślad na ścieżce kodowania i rozwijania się!
+
+### Szukasz ekskluzywnych treści? (Zadania, gotowce itp.)
+Oprócz oferty dołączenia do "WEEK-END WARRIORS", istnieje również opcja dla osób poszukujących tzw. "gotowców", materiałów, rozwiązań, lub leaków testowych. Wszystko to znajdziesz na naszym [discordzie](https://discord.com/invite/PDfx93dxq3), wejdź i skontaktuj się z nami przez formularz na kanale #help-desk.
 
 Nie wahaj się dołączyć do naszej społeczności Week-End Development Zaczynajmy razem naszą pasjonującą podróż w świecie kodu!
 
