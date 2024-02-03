@@ -14,12 +14,14 @@
       ╚═════╝ ╚══════╝  ╚═══╝  ╚══════╝  PRESENT:
 ```
 # SPIS TREŚCI
-1. [Informacje Ogólne](#informacje-ogólne)
-1. [Strona główna](#strona-główna)
-1. [Licencja](#⚠️-licencja)
-1. [Kodeks](#kodeks-postępowania)
-1. [Pomoc](#pomoc-techniczna)
-1. [Jak dołączyć? - Discord](#dołącz-do-week-end-warriors-🚀)
+- [SPIS TREŚCI](#spis-treści)
+  - [Informacje Ogólne](#informacje-ogólne)
+  - [Strona główna](#strona-główna)
+  - [⚠️ Licencja](#️-licencja)
+  - [Kodeks Postępowania](#kodeks-postępowania)
+  - [TABLICA INFORMACYJNA (zaliczenia 2024)](#tablica-informacyjna-zaliczenia-2024)
+  - [Pomoc techniczna](#pomoc-techniczna)
+  - [Dołącz do "WEEK-END WARRIORS" 🚀](#dołącz-do-week-end-warriors-)
 
 ## Informacje Ogólne
 Witaj w repozytorium `"WEEK-END DEVS"`! \
@@ -29,6 +31,14 @@ To repozytorium zawiera zadania i prace domowe dla studentów, zorganizowane w k
 [WEEK-END_DEVS](https://week-end-development.github.io/WED/)
 
 ## ⚠️ Licencja
+
+> [!WARNING]
+> **Naruszenie Praw:**
+>
+> W razie stwierdzenia naruszenia praw, **poszkodowana strona** powinna niezwłocznie zgłosić to właścicielowi repozytorium.
+>
+> Administracja repozytorium po otrzymaniu zgłoszenia **w ciągu 8 dni roboczych** podejmie stosowne kroki, włącznie z ewentualnym usunięciem spornych plików.
+
 Więcej informacji znajdziesz w pliku LICENSE.md.
 
 ## Kodeks Postępowania

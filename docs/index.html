@@ -4,6 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name='googlebot' content='follow, index' />
+  <meta name='classification' content='Bisiness' />
+  <meta name='category' content='tech' />
+  <meta name='designer' content='B0$' />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="Week-end Development">
   <meta name="keywords" content="WED, Week-end Devs, Week-end development, Week-end Warriors">
@@ -13,15 +17,30 @@
   <title>WEEK-END_DEVS</title>
   <link rel="icon" type="svg" href="./img/favicon.svg">
   <style>
-    :root {
-      --main-bg-color: #0d0;
-      --main-width: 300px;
-    }
-
     * {
       box-sizing: border-box;
       padding: 0;
       margin: 0;
+      font-family: "consolas";
+    }
+
+    :root {
+      --main-bg-color: #0d0;
+      --main-width: 600px;
+      --bg-size: calc(100vw/16);
+      --main-height: 200px;
+    }
+
+    @media only screen and (min-width: 1921px) {
+      :root {
+        --bg-size: calc(100vw / 36);
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      :root {
+        --bg-size: calc(100vw/8);
+      }
     }
 
     body {
@@ -30,7 +49,7 @@
       background-repeat: repeat-y;
       background-size: 100% 200%;
       overflow: hidden;
-      font-family: "consolas";
+      height: 100vh;
     }
 
     @keyframes gradientAnimation {
@@ -43,22 +62,24 @@
       }
     }
 
-    main {
+    #bg {
       height: 100vh;
       width: 100vw;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image:
+        repeating-linear-gradient(0deg, #0000 -2px, #0000 2px, #000b 3px, #000a var(--bg-size)),
+        repeating-linear-gradient(90deg, #0000 -2px, #0000 2px, #000b 3px, #000a var(--bg-size));
+      background-size: var(--bg-size) var(--bg-size);
     }
 
-    #bg {
-      height: 110vh;
-      width: 110vw;
-      position: absolute;
-      top: 55%;
-      left: 55%;
-      transform: translate(-55%, -55%);
-      background-image:
-        repeating-linear-gradient(0deg, #0000 -2px, #0000 2px, #000a 3px, #000a 80px),
-        repeating-linear-gradient(90deg, #0000 -2px, #0000 2px, #000a 3px, #000a 80px);
-      background-size: 80px 80px;
+    a,
+    a:hover,
+    a:active,
+    a:visited {
+      text-decoration: none;
+      color: inherit;
     }
 
     #bg-shadow {
@@ -70,32 +91,45 @@
       transform: translate(-50%, -50%);
       box-shadow: inset 0 0 500px #000;
     }
-    a, a:hover {
-      text-decoration: none;
-    }
-    nav {
-      position: absolute;
+
+    main {
+      position: relative;
+      margin: 0 auto;
+      max-width: 1800px;
+      /* padding-top: calc((100vh - var(--main-height))/2); */
       top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      z-index: 8;
-      background: #8880;
-      text-align: center;
-    }
-    h1{
-      font-size: 8rem;
-      font-weight: 900;
-      font-family: "consolas";
-    }
-    h1>span{
-      text-shadow: 1px 1px 15px var(--main-bg-color), -1px -1px 15px var(--main-bg-color);
-      color: #000;
+      transform: translateY(-50%);
     }
 
-    h3{
-      margin-top: -2rem;
-      font-size: 3rem;
+    section,
+    nav {
+      /* max-width: var(--main-width); */
+      color: var(--main-bg-color);
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    nav {
+      max-width: 800px;
+      padding-top: calc(var(--bg-size)*0.5);
+      display: flex;
+    }
+
+    h1 {
+      font-size: calc(var(--bg-size)*1.5);
+    }
+
+    footer {
+      bottom: 8px;
+      width: 100%;
+      position: absolute;
+      text-align: center;
+      color: var(--main-bg-color);
+    }
+
+    h3 {
+      margin-top: calc(var(--bg-size)*-0.4);
+      font-size: calc(var(--bg-size)*0.5);
       color: var(--main-bg-color);
       font-weight: 800;
       text-align: left;
@@ -103,86 +137,317 @@
       transform: translate(-50%);
       position: relative;
       width: var(--main-width);
+      z-index: 10;
     }
-    h3 span{
+
+    h3 span {
       position: relative;
       color: #0d0;
     }
-    h3 span::before{
+
+    h3 span::before {
       content: "";
       right: -8px;
-      top:50%;
+      top: 50%;
       position: absolute;
-      height: 3rem;
+      height: calc(var(--bg-size)*0.5);
       width: 2px;
       background: var(--main-bg-color);
       transform: translateY(-45%);
       animation: blink .7s infinite;
     }
-    h3 span.stop-blinking::before{
+
+    h3 span.stop-blinking::before {
       animation: none;
     }
+
     @keyframes blink {
-      50%{opacity: 0;}
+      50% {
+        opacity: 0;
+      }
     }
 
-    a>p{
-      color: #eee;
-      font-size: 1.5rem;
-      text-align: center;
-      width: var(--main-width);
-      margin-top: 8px;
-    }
-    section{
-      margin-top: 3rem;
-      left: 50%;
-      transform: translate(-50%);
+    ul {
       position: relative;
-      text-align: left;
-      width: var(--main-width);
+      transform: skewY(-15deg);
+      width: 80px;
+      left: 20px;
     }
-    footer{
-      bottom: 8px;
-      position: sticky;
-      text-align: center;
-      color: var(--main-bg-color);
+
+    ul li {
+      position: relative;
+      list-style: none;
+      width: 80px;
+      background: #3e3f46;
+      padding: 10px 0;
+      transition: 0.5s;
+      z-index: var(--zix);
+      user-select: none;
+      cursor: pointer;
     }
-    @media only screen and (max-width: 767px) {
-      h1{
-        font-size: 80px;
-        padding: 0;
-      }
+
+    ul li:hover {
+      transform: translateX(-20px);
+      background: #61626e;
+    }
+
+    ul li.active {
+      transform: translateX(-20px);
+      background: #61626e;
+      width: 110px;
+    }
+
+    ul li::before,
+    ul li span {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -30px;
+      width: 30px;
+      height: 100%;
+      background: #3e3f46;
+      filter: brightness(0.7);
+      transform: skewY(45deg);
+      transform-origin: right;
+    }
+
+    ul li::after {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: 0;
+      width: 100%;
+      height: 30px;
+      background: #35383e;
+      transform-origin: bottom;
+      transform: skewX(45deg);
+      transition: 0.5s;
+    }
+
+    .progress-bar {
+      position: relative;
+      width: 300px;
+      background: #3e3f46;
+      padding: 2px 0;
+      display: block;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .done {
+      position: absolute;
+      display: block;
+      left: 0;
+      height: 100%;
+      background: var(--main-bg-color);
+      opacity: 0.2;
+      width: calc(300px* var(--done));
+    }
+
+    .progress-bar::before,
+    .done::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -10px;
+      width: 10px;
+      height: 100%;
+      background: #3e3f46;
+      filter: brightness(0.7);
+      transform: skewY(45deg);
+      transform-origin: right;
+    }
+
+    .done::before {
+      background: var(--main-bg-color);
+    }
+
+    .progress-bar::after,
+    .done::after {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background: #35383e;
+      transform-origin: bottom;
+      transform: skewX(45deg);
+    }
+
+    .done::after {
+      background: #f00;
+    }
+
+
+    ul li span {
+      padding: 10px 0;
+      font-weight: 900;
+    }
+
+    nav section {
+      background: #fff2;
+      width: 100%;
+    }
+
+    nav section div {
+      display: none;
+      padding: 10px 10px 0 25px;
+      top: 50%;
+      transform: translateY(-50%);
+      position: relative;
+    }
+
+    h1>span {
+      text-shadow: 0 0 0 var(--main-bg-color), 8px -6px 5px #000, 8px -6px 30px var(--main-bg-color);
+      color: #0000;
+    }
+
+    section>div>h1 {
+      font-size: calc(var(--bg-size)*0.4);
     }
   </style>
 </head>
 
 <body>
+  <div id="bg"></div>
+  <div id="bg-shadow"></div>
   <main>
-    <div id="bg"></div>
-    <div id="bg-shadow"></div>
-  </main>
-  <nav>
-    <a href="https://github.com/Week-end-Development/WED"><h1><span>WEEK-END</span></h1></a>
-    <h3>&nbsp;<span></span></h3>
     <section>
-      <a href="https://github.com/Week-end-Development/WED"><p><b>REPOZYTORIUM WEEK-END DEVELOPMENT</b></p></a>
-      <a href="./pages/sys-ops.html"><p>Administracja Systemami Operacyjnymi</p></a>
-      <a href="https://github.com/Week-end-Development/WED/blob/main/SEM5/sv-cheat-sheet.md"><p>Systemy wizyjne 2</p></a>
+      <a href="https://github.com/Week-end-Development/WED">
+        <h1><span>WEEK&rarr;END</span></h1>
+      </a>
+      <h3>&nbsp;<span></span></h3>
     </section>
-  </nav>
+    <nav>
+      <ul>
+        <li style="--zix:8;"><span>i</span>INFO</li>
+        <li style="--zix:7;"><span>1</span>SEM1</li>
+        <li style="--zix:6;"><span>2</span>SEM2</li>
+        <li style="--zix:5;"><span>3</span>SEM3</li>
+        <li style="--zix:4;"><span>4</span>SEM4</li>
+        <li style="--zix:3;"><span>5</span>SEM5</li>
+        <li style="--zix:2;"><span>6</span>SEM6</li>
+        <li style="--zix:1;"><span>7</span>SEM7</li>
+      </ul>
+      <section>
+        <div>
+          <h1>WEEK-END_DEVELOPMENT</h1>
+          <p>To inicjatywa, w ramach której studenci zrzeszają się, aby wspólnie rozwijać swoje umiejętności
+            programistyczne, dzielić się wiedzą i wzajemnie pomagać.
+          </p>
+          <br>
+          <p>Naszym celem jest budowanie społeczności pasjonatów kodowania, inspirujących się nawzajem i rozwijających
+            swoją pasję do nauki.</p>
+          <a href="https://github.com/Week-end-Development/WED">
+            <h2>&rarr;<u>REPOZYTORIUM</u>&larr;</h2>
+          </a>
+          <br>
+          <h4>ZAŁOŻYCIELE:</h4>
+          <p>NIKOSKY & BO$</p>
+
+
+        </div>
+        <div>
+          <h1>SEMESTR 1</h1>
+          <p>Tutaj znajdziesz notatki, materiały oraz pliki związane z pierwszym semestrem. Regularnie odwiedzaj stronę,
+            by być na bieżąco.</p>
+          <br>
+          <p>Dołącz do społeczności, aktywnie uczestnicz, wysyłaj Pull Requesty z własnymi rozwiązaniami i dziel się
+            wiedzą z innymi.</p>
+          <br>
+          <p><b>Życzymy owocnego semestru i udanej przygody w społeczności Week-End Development!</b></p>
+          <h2>STATUS: IN PROGRESS</h2>
+          <div class="progress-bar" style="--done:.6;">
+            60% DONE
+            <div class="done"> </div>
+          </div>
+        </div>
+        <div>
+          <h1>SEMESTR 2</h1>
+          <br>
+          <h2>STATUS: IN PROGRESS</h2>
+          <div class="progress-bar" style="--done:.4;">
+            40% DONE
+            <div class="done"> </div>
+          </div>
+        </div>
+        <div>
+          <h1>SEMESTR 3</h1>
+          <br>
+          <h2>STATUS: IN PROGRESS</h2>
+          <div class="progress-bar" style="--done:.45;">
+            45% DONE
+            <div class="done"> </div>
+          </div>
+        </div>
+        <div>
+          <h1>SEMESTR 4</h1>
+          <br>
+          <h2>STATUS: IN PROGRESS</h2>
+          <div class="progress-bar" style="--done:.2;">
+            20% DONE
+            <div class="done"> </div>
+          </div>
+        </div>
+        <div>
+          <h1><a href="https://github.com/Week-end-Development/WED/tree/main/SEM5">SEMESTR 5</a></h1>
+          <hr>
+          <h2>SYS-OPS</h2>
+          <p><a href="./pages/sys-ops.html">Administracja Systemami Operacyjnymi</a></p>
+          <p><a href="https://github.com/Week-end-Development/WED/blob/main/SEM5/ast-cheat-sheet2.md">PODSTAWY SZTUCZNEJ
+              INTELIGENCJI</a></p>
+          <p><a href="https://github.com/Week-end-Development/WED/blob/main/SEM5/sv-cheat-sheet.md">SYSTEMY WIZYJNE</a>
+          </p>
+          <p><a href="https://github.com/Week-end-Development/WED/blob/main/SEM5/st-cheat-sheet.md">PODSTAWY TEORII
+              SYSTEMÓW</a></p>
+          <br>
+          <hr>
+          <h2>DEV-OPS</h2>
+          <p><a href="https://github.com/Week-end-Development/WED/blob/main/SEM5/ast-cheat-sheet2.md">PODSTAWY SZTUCZNEJ
+              INTELIGENCJI</a></p>
+          <p><a href="https://github.com/Week-end-Development/WED/blob/main/SEM5/st-cheat-sheet.md">PODSTAWY
+              AUTOMATYKI</a></p>
+        </div>
+        <div>
+          <h1>SEMESTR 6</h1>
+          <br>
+          <h2>STATUS: IN PROGRESS</h2>
+          <div class="progress-bar" style="--done:0.0;">
+            0% DONE
+            <div class="done"> </div>
+          </div>
+        </div>
+        <div>
+          <h1>SEMESTR 7</h1>
+          <br>
+          <h2>STATUS: IN PROGRESS</h2>
+          <div class="progress-bar" style="--done:0.0;">
+            0% DONE
+            <div class="done"></div>
+          </div>
+        </div>
+      </section>
+    </nav>
+  </main>
+
   <footer>All rights reserved (c) 2024 Week-End Development</footer>
+  <!-- <script src="../js/jquery-3.6.1.min.js"></script>
+  <script src="../bootstrap5/js/bootstrap.bundle.min.js"></script> -->
   <script type="text/javascript">
     const dynamicText = document.querySelector("h3 span");
-    const wordList = ["DEVs", "Warriors", "Development", "Developers"];
+    const wordList = ["DEVs", "Warriors", "Development", "Events", "Deployment", "Freedom", "Getaway", "Developers"];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
+
     const typeEffect = () => {
       const currentWord = wordList[wordIndex];
       const currentChar = currentWord.substring(0, charIndex);
       dynamicText.textContent = currentChar;
       dynamicText.classList.add("stop-blinking");
-      if(!isDeleting && charIndex < currentWord.length){
+      if (!isDeleting && charIndex < currentWord.length) {
         charIndex++;
         setTimeout(typeEffect, 200);
       } else if (isDeleting && charIndex > 0) {
@@ -191,17 +456,43 @@
       } else {
         isDeleting = !isDeleting;
         dynamicText.classList.remove("stop-blinking");
-        wordIndex = !isDeleting ? (wordIndex+1)%wordList.length : wordIndex;
+        wordIndex = !isDeleting ? (wordIndex + 1) % wordList.length : wordIndex;
         setTimeout(typeEffect, 1200);
       }
     };
-    typeEffect();
-    const root = document.documentElement;
-    const mainText = document.querySelector("h1 span");
-    const spanWidth = mainText.offsetWidth;
-    root.style.setProperty('--main-width', spanWidth+"px");
 
-  //setTimeout(function () { window.location.reload(1); }, 5000); // RELOADER </script>
+    const handleResize = () => {
+      const root = document.documentElement;
+      const mainText = document.querySelector("h1 span");
+      const spanWidth = mainText.offsetWidth;
+      root.style.setProperty('--main-width', spanWidth + "px");
+    }
+
+    const sectionDivs = document.querySelectorAll('section>div');
+    const sectionUl = document.querySelectorAll('nav>ul>li');
+
+    sectionUl.forEach((item, index) => {
+      // item.addEventListener("mouseover", toggleElements);
+      item.addEventListener("click", toggleElements);
+
+      function toggleElements() {
+        sectionDivs.forEach((div, i) => {
+          div.style.display = 'none';
+          sectionUl[i].classList.remove("active");
+        });
+
+        sectionDivs[index].style.display = 'block';
+        sectionUl[index].classList.add("active");
+      }
+    });
+
+    sectionDivs[0].style.display = 'block';
+    sectionUl[0].classList.add("active");
+    typeEffect();
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    //setTimeout(function () { window.location.reload(1); }, 5000); // RELOADER
+  </script>
 </body>
 
 </html>
