@@ -1,6 +1,6 @@
 ; File:         project-1a.asm
 ; Autor:        BO$
-; Data:         06.04.2022
+; Date:         06.04.2022
 ; Version:      0x0002
 ; Copyrights:   All rights reserved (c) 2024 Week-End Development
 ;================================================================
