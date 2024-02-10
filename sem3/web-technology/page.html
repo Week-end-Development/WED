@@ -1,0 +1,248 @@
+<!--##################WEEK#END#DEVELOPMENT######################
+# file:       page.html
+# autor:      BO$
+# date:       27.05.2020
+# version:    0x0006
+# copyrights: All rights reserved (c) 2024 Week-End Development
+# ==============================================================
+# TOPIC:      Example HTML
+######################WEEK#END#DEVELOPMENT###################-->
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name='googlebot' content='follow, index' />
+  <meta name='classification' content='' />
+  <meta name='category' content='tech' />
+  <meta name='designer' content='' />
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <meta name="copyright" content="">
+  <meta name="owner" content="">
+  <title>WEEK-END_DEVS_WEB-TECH</title>
+  <!-- <link rel="icon" type="svg" href=""> -->
+  <link rel='stylesheet' href='./style.css' />
+</head>
+
+<body>
+  <!-- <?php
+  //connection
+  require_once "./conn.php";
+?> -->
+  <div id="wrapper">
+    <!--
+    HTML5 znaczniki
+      - article
+      - aside
+      - header
+      - nav
+      - main
+      - section
+      - footer
+  -->
+    <nav>
+      <h1>WEEK-END DEVELOPMENT</h1>
+    </nav>
+    <main>
+      <div id="paragraph" style="grid-area: d0;">
+        <p>To jest paragraf.</p>
+        <hr>
+        <span>To jest span.</span>
+        <hr>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">LINK</a>
+        <br>
+        <hr>
+        INDEX <sup>GÓRNY</sup>
+        <br>
+        <hr>
+        INDEX <sub>DOLNY</sub>
+      </div>
+      <div id="naglowki" style="grid-area: d1;">
+        <h1>H1</h1>
+        <h2>H2</h2>
+        <h3>H3</h3>
+        <h4>H4</h4>
+        <h5>H5</h5>
+        <h6>H6</h6>
+      </div>
+      <div id="zasady" style="grid-area: d2;">
+        <fieldset>
+          <legend>ZBIÓR ZASAD</legend>
+          <ol>
+            <li>Konsekwencja stylu</li>
+            <li>Łatwa nawigacja</li>
+            <li>Sugestywne grafiki</li>
+            <li>Więcej przestrzeni</li>
+            <li>Proste formularze</li>
+            <li>Czytelność tekstu</li>
+            <li>Łatwy dostęp do wyszukiwarki</li>
+            <li>Rezygnacja z paska bocznego</li>
+            <li>Ograniczona liczba fontów</li>
+            <li>Mało wyśrodkowanych tekstów</li>
+            <li>Skupienie uwagi na użytkownikach mobilnych</li>
+            <!-- <li>Korzystanie z odpowiednich narzędzi</li> -->
+          </ol>
+        </fieldset>
+      </div>
+      <div id="lista" style="grid-area: d3;">
+        <ol>
+          <li>Lista</li>
+          <li>Uporzątkowana</li>
+        </ol>
+        <hr>
+        <ul>
+          <li>Lista</li>
+          <li>Nieuporzątkowana</li>
+        </ul>
+        <hr>
+        <dl>
+          <dt>Lista</dt>
+          <dd>Definicji</dd>
+        </dl>
+      </div>
+      <div id="tabela" style="grid-area: d4;">
+        <table>
+          <caption>TABELA</caption>
+          <tr>
+            <th>Nagłówek</th>
+            <th>Kolumny</th>
+          </tr>
+          <tr>
+            <td colspan="2">Colspan</td>
+
+          </tr>
+          <tr>
+            <td rowspan="2">Rowspan</td>
+            <td>Komórka</td>
+          </tr>
+          <tr>
+            <td>Komórka</td>
+          </tr>
+        </table>
+      </div>
+      <div id="inputy" style="grid-area: d5;">
+        <fieldset>
+          <legend>INPUTY</legend>
+
+          <input type="text" name="text1" id="input1" placeholder="text">
+          <input type="date">
+          <input type="password" placeholder="haslo">
+          <br>
+          <hr>
+          <input type="checkbox" id="input2">
+          <label for="input2">CHECKBOX</label>
+          <br>
+          <hr>
+          <input type="radio" id="input3">
+          <label for="input3">RADIO</label>
+          <br>
+          <hr>
+          <input type="range" id="input4">
+          <label for="input4">RANGE</label>
+          <input type="button" value="Przycisk">
+          <select>
+            <option>Opcja1</option>
+            <option>Opcja2</option>
+          </select>
+          <input type="submit" value="Prześlij">
+        </fieldset>
+      </div>
+      <div style="grid-area: d6;">
+        <fieldset>
+          <legend>preprocesory CSS</legend>
+          Najbardziej znane: <b>Sass, LESS i Stylus</b>
+          <ul>
+            <legend>WADY</legend>
+            <li>CSS jest bardziej złożony,</li>
+            <li>Nie dodają funkcjonalności CSS do CSS</li>
+            <li>Mogą być niebezpieczne dla standardu CSS</li>
+          </ul>
+        </fieldset>
+      </div>
+      <div style="grid-area: d7;">
+        <fieldset>
+          <legend>JavaScript</legend>
+        </fieldset>
+      </div>
+      <div style="grid-area: d8;">
+        <fieldset>
+          <legend>PHP łącze do DB</legend>
+          <span>
+            $conn = new mysqli('localhost','root','','hotpizza'); <br>
+            if($conn->connect_error){ <br>
+            die("Connection failed: ".$conn->connect_error);<br>
+            } <br>
+            $conn->set_charset("utf8"); <br>
+            $conn->close();</span>
+        </fieldset>
+        <fieldset>
+          <legend>Operacja na plikach</legend>
+          <span>
+            fopen("file.txt", "r/w"); => otwarcie pliku odczyt/zapis
+            <hr>
+            fclose("file.txt"); => zamknięcie pliku
+            <hr>
+            fread($file, $maxLen); => odczyt całego pliku
+            <hr>
+            fwrite($file, $text, $maxLen); => zapis do pliku
+            <hr>
+            flock($file, mode); => blokada pliku (1-odczyt, 2-zapis, 3-zwolnienie blokady)
+          </span>
+        </fieldset>
+      </div>
+      <div style="grid-area: d9;">
+        <fieldset>
+          <legend>COOKIE</legend>
+          setcookie("zmienna","10, time()+360"); => tworzy ciasteczko na 6min,
+          <hr>
+          setcookie(); => usuwa ciasteczko, :(
+        </fieldset>
+      </div>
+      <div style="grid-area: d10;">
+        <fieldset>
+          <legend>SESION</legend>
+          session_start() => uruchamia sesje,
+          <hr>
+          session_destroy() => niszczy sesje
+        </fieldset>
+      </div>
+      <div style="grid-area: d11;">
+
+        <span><b>Flat design</b> Stosuje się przy projektowaniu GUI oraz stron
+          internetowych w celu zapewnienia optymalizacji oraz czytelności.</span>
+        <ul>
+          <legend>CECHY</legend>
+          <li>Dynamiczne kolory</li>
+          <li>Prosta typografia</li>
+          <li>Ghost button</li>
+          <li>Minimalizm</li>
+        </ul>
+      </div>
+      <div style="grid-area: d12;">
+        <ul>
+          <legend><b>Typy monitoringu stron</b></legend>
+          <li>dostępności,</li>
+          <li>treści,</li>
+          <li>szybkości</li>
+          <li>funkcji i procesów</li>
+        </ul>
+      </div>
+    </main>
+    <footer>Copyright &copy; 2023</footer>
+  </div>
+  <!-- <script src="../js/jquery-3.6.1.min.js"></script> -->
+  <!-- <script src="../bootstrap5/js/bootstrap.bundle.min.js"></script> -->
+  <!-- <script type="text/javascript" src="./script.js"></script> -->
+  <script type="text/javascript">
+    setTimeout(function () {
+      window.location.reload(1);
+    }, 5000);
+  </script>
+</body>
+
+</html>

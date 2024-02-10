@@ -1,0 +1,106 @@
+/*####################WEEK#END#DEVELOPMENT######################
+# file:        style.css
+# autor:       BO$
+# date:        27.05.2020
+# version:     0x0002
+# copyrights:  All rights reserved (c) 2024 Week-End Development
+# ==============================================================
+# TOPIC:       CSS
+######################WEEK#END#DEVELOPMENT####################*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* text-decoration: none; */
+  /* list-style: none; */
+}
+
+body {
+  margin: 0;
+  background: #333;
+}
+
+#wrapper {
+  height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 40px 1fr 20px;
+  grid-template-areas:
+    "nav"
+    "main"
+    "footer";
+  row-gap: .5rem;
+  column-gap: .5rem;
+}
+
+nav {
+  grid-area: nav;
+  background: #666;
+  text-align: center;
+  line-height: 40px;
+}
+
+main {
+  grid-area: main;
+  background: #444;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "d0 d1  d2  d3  d4"
+    "d5 d5  d2  d6  d6"
+    "d7 d7  d7  d8  d8"
+    "d7 d7  d7  d8  d8"
+    "d12 d9  d10 d11 d11";
+  row-gap: .5rem;
+  column-gap: .5rem;
+}
+
+main>div {
+  background: #666;
+  box-shadow: 0 0 5px #000;
+  border-radius: 5px;
+}
+
+ol,
+ul {
+  padding-left: 18px;
+}
+
+main>div:hover {
+  box-shadow: 0 0 8px #ddd
+}
+
+footer {
+  grid-area: footer;
+  background: #666;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+/*  selektor    deklaracja
+         *   h1          {color:     blue;}
+         *               właściwość  wartość
+         */
+
+/* METODY OSADZANIA STYLÓW
+         * -wewnętrznie => zagnieżdżony(inline), lokalny(in head section)
+         * -zewnętrzny => external <link rel='stylesheet' href='style.css'/>
+         *              \=> link np. bootstrap
+         *              @import url(adres zewnętrznego arkusza stylów);
+         */
+
+/* PIORYTET CSS
+         *  1] stytl lokaly (inline)
+         *  2] wewnętrzny (in head)
+         *  3] import
+         *  4] dołączany
+         *  5] importowany do dołączanego
+         */
