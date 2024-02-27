@@ -1,1 +1,8 @@
 .vscode/
+**/mycode/
+**/x_*
+**/_*
+**/my_*
+**/text*
+**/*.exe
+**/*.pdf
