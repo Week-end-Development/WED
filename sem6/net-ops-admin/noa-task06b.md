@@ -26,8 +26,11 @@ graph LR
   SW2 -- fa0/2 --- K4
 ```
 ## DANE
-$$ x = index \% 31 $$
-$$ y = index \% 14 $$
+
+x = index % 31
+
+y = index % 14
+
 ```yaml
 username:     "bos"
 secret:       "C1$c012345"
