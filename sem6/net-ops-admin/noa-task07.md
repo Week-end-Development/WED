@@ -25,4 +25,4 @@ graph LR
   end
 ```
 ## LINK
-[PLIK](https://github.com/Week-end-Development/INF-I/blob/main/sem6/net-ops-admin/noa-task07.md)
+[INSTRUKCJA](https://github.com/Week-end-Development/INF-I/blob/main/sem6/net-ops-admin/noa-task07.md)
