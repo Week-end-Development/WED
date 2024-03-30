@@ -9,7 +9,6 @@ date:         30.03.2024
 copyright:    "All rights reserved (c) 2024 WEEK-END DEVELOPMENT"
 task_no:      0x09
 version:      0x0001
-status:       "IN PROGRESS"
 ```
 - Packet Tracer - Integrujące VLAN-y
 - Urządzenia
