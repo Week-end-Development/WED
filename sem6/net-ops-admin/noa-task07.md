@@ -1,7 +1,7 @@
 ---
 topic: "Protokół OSPF"
 subject: "Administracja infrastrukturą sieciową przedsiębiorstwa"
-tags: ["sem6", "noa", "task06"]
+tags: ["sem6", "noa", "task07"]
 ---
 ```yaml
 author:       "BO$"
@@ -10,6 +10,12 @@ copyright:    "All rights reserved (c) 2024 WEEK-END DEVELOPMENT"
 task_no:      0x07
 version:      0x0003
 ```
+- Protokół OSPF
+- DANE
+- TABELA IP
+- Konfiguracja R1
+- Konfiguracja R2
+- Konfiguracja R3
 ## Protokół OSPF
 ```mermaid
 graph LR
@@ -25,4 +31,4 @@ graph LR
   end
 ```
 ## LINK
-[PLIK](https://github.com/Week-end-Development/INF-I/blob/main/sem6/net-ops-admin/noa-task07.md)
+[INSTRUKCJA](https://github.com/Week-end-Development/INF-I/blob/main/sem6/net-ops-admin/noa-task07.md)
