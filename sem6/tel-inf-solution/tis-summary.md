@@ -9,6 +9,9 @@ copyright:    "All rights reserved (c) 2024 WEEK-END DEVELOPMENT"
 status:       "IN PROGRESS"
 version:      0x0006
 ```
+> [!CAUTION]
+> **WEEK-END DEVELOPMENT** ***Nie gwarantuje poprawności informacji!!!***
+
 - [ROZWIĄZANIA TELEINFORMATYCZNE SIECI INTERNET - WYKŁADY](#rozwiązania-teleinformatyczne-sieci-internet---wykłady)
 - [Medium transmisyjne](#medium-transmisyjne)
 - [Przewodowe](#przewodowe)
