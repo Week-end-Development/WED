@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>GRAFIKA 2D</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #333;
+            color: #eee;
+        }
+
+        main {
+            padding: 0 10px;
+            margin: 0 auto;
+            max-width: 1800px;
+            font-family: Consolas;
+            font-weight: 600;
+        }
+
+        h1,h3 {
+            margin-top: 30px;
+            margin-bottom: -15px;
+        }
+
+        p,
+        ul,
+        table,
+        ol {
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: justify;
+        }
+
+        ul,
+        ol {
+            padding-left: 40px;
+        }
+
+        a, a:hover{
+            text-decoration: none;
+            color: #eee;
+            font-size: 22px;
+        }
+        footer{
+            text-align: center;
+            height: 300px;
+            padding-top: 30px;
+            font-family: Consolas;
+            font-weight: 600;
+        }
+    </style>
+   
+</head>
+
+<body>
+    <main>
+        WED CheatSheet: GRAFIKA 2D IN PILL
+
+        <ol>
+            <li><a href="#g1">MACIERZ GRAFIKI 2D</a></li>
+            <li><a href="#g2">PODSTAWOWE GRUPY PRZEKSZTAŁCEŃ</a></li>
+            <li><a href="#g3">BARWA I JEJ ATRYBUTY</a></li>
+            <li><a href="#g4">STEGANOGRAFIA</a></li>
+            <li><a href="#g5">HISTOGRAM</a></li>
+            <li><a href="#g6">KOPIOWANIE KRAWĘDZI</a></li>
+            <li><a href="#g7">ALGORYTMY KOMPRESJI OBRAZÓW</a></li>
+            <li><a href="#g8">ALGORYTM KWANTYZACJI</a></li>
+            <li><a href="#g9">OBRAZ ANALOGOWY</a></li>
+            <li><a href="#g10">OBRAZ CYFROWY</a></li>
+            <li><a href="#g11">OBRAZ BINARNY (uint8)</a></li>
+            <li><a href="#g12">OBRAZ BINARNY (1 bit)</a></li>
+            <li><a href="#g13">KODOWANIE BIEŻĄCYCH DŁUGOŚCI (RLE)</a></li>
+            <li><a href="#g14">DYSKRETNA TRANSFORMACJA COSINUSOWA (DCT)</a></li>
+            <li><a href="#g15">ODWROTNA TRANSFORMACJA COSINUSOWA (IDCT)</a></li>
+            <li><a href="#g16">JPG/JPEG</a></li>
+            <li><a href="#g17">PNG</a></li>
+            <li><a href="#g18">GIF</a></li>
+            <li><a href="#g19">SVG</a></li>
+            <li><a href="#g20">POSTSCRIPT</a></li>
+            <li><a href="#g21">KONWOLUCJA DYSKRETNA</a></li>
+            <li><a href="#g22">FILTR JEDNOSTKOWY</a></li>
+            <li><a href="#g23">FILTR JEDNOSTKOWY</a></li>
+            <li><a href="#g24">FILTR DOLNOPRZEPUSTOWY / UŚREDNIAJĄCY</a></li>
+            <li><a href="#g25">FILTRY STATYCZNE</a></li>
+            <li><a href="#g26">TRANSFORMACJA FOURIERA</a></li>
+            <li><a href="#g27">LaTeX</a></li>
+        </ol>
+
+        <h1 id="g1">MACIERZ GRAFIKI 2D</h1>
+        <p>[ a b tx ]<br>[ c d ty ]<br>[ u v w &ensp;]</p>
+        <ul>
+            <li>tx, ty  => TRANSLATION (translacje, przesunięcie) Przesuwa obraz o tx w osi X oraz o ty w osi Y.</li>
+            <li>a, d    => SCALING (skalowanie) Zmienia rozmiar obrazu, mnożąc położenie każdego pikselu przez a na osi X i d na osi Y.</li>
+            <li>cos(a), sin(b), -sin(c), cos(d) => ROTATE (rotacja) [a=b=c=d] Obrót obrazu o kąt a mierzony w radianach.</li>
+            <li>tan(c), tan(b)  => SKEWING (skrzywianie) Stopniowo przesuwaj obraz w kierunku równoległym do osi X lub Y.</li>
+            <li> u, v, w => PERSPEKTYWA Symulowanie efektu perspektywy skrętu obrazu. (standardowo 0 0 1).</li>
+        </ul>
+
+        <h1 id="g2">PODSTAWOWE GRUPY PRZEKSZTAŁCEŃ:</h1>
+        <ul>
+            <li>geometryczne,</li>
+            <li>punktowe => bezkontekstowe,</li>
+            <li>kontekstowe => filtry: konwolucyjne (splotowe), logiczne i statyczne (medianowe),</li>
+            <li>widmowe => wykorzystujące transformacje Fouriera,</li>
+            <li>morfologiczne.</li>
+        </ul>
+
+        <h1 id="g3">BARWA I JEJ ATRYBUTY</h1>
+        <ul>
+            <li>Kolor (odcień) to różnica jakościowa barwy,</li>
+            <li>Nasycenie to odstępstwo od barwy.</li>
+            <li>Jasność określa ilość bieli lub czerni w danej barwie.</li>
+        </ul>
+
+        <h1 id="g4">STEGANOGRAFIA</h1>
+        <p>polega na ukrywaniu informacji w obrazach w sposób trudny do wykrycia. Można to osiągnąć poprzez manipulację pikselami obrazu lub wprowadzanie subtelnych zmian, które są niewidoczne dla oka ludzkiego.</p>
+        <p>Przykładowe techniki steganografii obejmują:</p>
+        <ul>
+            <li>Metodę najmniej znaczącego bitu (LSB), która polega na zastąpieniu najmniej znaczących bitów pikseli ukrytymi danymi.</li>
+            <li>Metodę zmiany wartości pikseli, gdzie subtelne zmiany wprowadzane są do wartości pikseli, wykorzystując różnice między sąsiednimi pikselami.</li>
+            <li>Metodę ukrywania w częstotliwościach, która wykorzystuje transformację Fouriera lub inne techniki przetwarzania częstotliwościowego do ukrycia danych w widmie częstotliwości obrazu.</li>
+            <li>Metodę ukrywania w histogramie, która polega na manipulacji rozkładem intensywności pikseli w celu ukrycia danych.</li>
+        </ul>
+        <p>Na wykładzie pokazano przykład ukrywania danych w obrazie Leny. Po przetworzeniu obrazu za pomocą funkcji w JavaScript otrzymano tablicę z zakodowanymi znakami, gdzie każdy znak jest reprezentowany przez odcień barwy. Istnieje również klucz kodujący i dekodujący, który umożliwia odczytanie ukrytych danych.</p>
+
+        <h1 id="g5">HISTOGRAM</h1>
+        <p>używany do analizy rozkładu intensywności pikseli w obrazie i dokonywania odpowiednich dostosowań w celu poprawy ekspozycji, kontrastu i balansu kolorów.</p>
+        <p>Przykładowe zastosowania histogramu obejmują:</p>
+        <ul>
+            <li>Korekcję ekspozycji, gdzie można dostosować krzywą tonalną, aby poprawić równomierne rozłożenie jasności w obrazie.</li>
+            <li>Korekcję kontrastu, pozwala na rozciągnięcie zakresu tonalnego, aby zwiększyć różnicę między jasnymi i ciemnymi obszarami obrazu.</li>
+            <li>Korekcję balansu kolorów, pozwala na identyfikację przewagi pewnych kolorów i dostosowanie ich proporcji w celu uzyskania bardziej neutralnego lub pożądanego efektu kolorystycznego.</li>
+            <li>Korekcję przetwarzania nieliniowego, może posłużyć do manipulacji krzywymi tonalnymi, takimi jak korekcja gamma.</li>
+        </ul>
+        <p>Na przykładzie obrazu Leny, wykres histogramu został rozciągnięty na całą długość, co spowodowało zwiększenie zakresu kolorów, a tym samym uczyniło obraz bardziej żywym i dynamicznym.</p>
+
+        <h1 id="g6">KOPIOWANIE KRAWĘDZI</h1>
+        <p>Dlaczego przy algorytmach filtracji cyfrowej zaproponowano przekopiowanie pikseli krawędzi bitmapy przekształcanej do bitmapy wynikowej?</p>
+        <p>Przekopiowanie pikseli krawędzi w algorytmach filtracji cyfrowej jest proponowane w celu zachowania krawędzi obrazu i uniknięcia utraty informacji. Krawędzie są istotnymi cechami wizualnymi, które przenoszą ważne informacje na temat obiektów na obrazie. Filtry cyfrowe mogą wpływać na wygląd krawędzi, dlatego przekopiowanie pikseli krawędzi do wynikowej bitmapy pomaga w zachowaniu wyraźności i ostrości krawędzi.</p>
+        <ul>
+            <li>ZACHOWANIE KRAWĘDZI OBRAZU</li>
+            <li>UNIKNIĘCIE UTRATY INFORMACJI</li>
+        </ul>
+
+        <h1 id="g7">ALGORYTMY KOMPRESJI OBRAZÓW</h1>
+        <p>mają na celu zmniejszenie rozmiaru plików graficznych bez znaczącej utraty jakości obrazu. Istnieje wiele algorytmów kompresji stosowanych w grafice komputerowej 2D, a oto kilka z nich:</p>
+        <h3>KOMPRESJA BEZSTRATNA:</h3>
+        <ul>
+            <li>RLE (Run-Length Encoding): Ten prosty algorytm kompresji polega na zastępowaniu powtarzających się pikseli lub sekwencji pikseli jednym symbolem i liczbą ich powtórzeń.</li>
+            <li>Huffman Coding: To technika kompresji entropijnej, która przypisuje krótsze kody binarne do często występujących symboli i dłuższe kody dla rzadziej występujących symboli.</li>
+            <li>LZ77/LZ78: Te algorytmy kompresji słownikowej opierają się na znajdowaniu powtarzających się sekwencji danych i zastępowaniu ich krótszymi odwołaniami do wcześniej wystąpionych sekwencji.</li>
+        </ul>
+        <h3>KOMPRESJA STRATNA:</h3>
+        <ul>
+            <li>JPEG (Joint Photographic Experts Group): Jest to jeden z najpopularniejszych formatów kompresji obrazów, który stosuje kompresję stratną. Wykorzystuje przekształcenia kosinusowe (DCT) i kwantyzację, aby zredukować precyzję niektórych części obrazu, minimalizując stratę jakości przy akceptowalnym poziomie kompresji.</li>
+            <li>PNG (Portable Network Graphics): Ten format kompresji bezstratnej często stosuje metodę kompresji deflate, która łączy algorytm LZ77 z kodowaniem Huffmana. PNG jest szczególnie skuteczne w kompresji obrazów z dużą liczbą powtarzających się pikseli lub obszarów o jednolitym kolorze.</li>
+            <li>WebP: Jest to nowoczesny format kompresji opracowany przez Google. Wykorzystuje zarówno kompresję bezstratną, jak i stratną, w zależności od wymagań obrazu. WebP oferuje zazwyczaj lepszą kompresję w porównaniu do formatu JPEG przy podobnej jakości obrazu.</li>
+        </ul>
+
+        <h1 id="g8">ALGORYTM KWANTYZACJI</h1>
+        <p>Algorytm kwantyzacji w grafice komputerowej 2D jest techniką kompresji stratnej, która polega na redukcji precyzji kolorów w obrazie.</p>
+
+        <h1 id="g9">OBRAZ ANALOGOWY</h1>
+        <p>jest rejestrowany i przekazywany za pomocą sygnałów analogowych, charakteryzujących się płynnymi zmianami w czasie i przestrzeni. Jest reprezentowany jako sygnały ciągłe i wykorzystuje fizyczne nośniki, takie jak film czy taśma magnetyczna. Obrazy analogowe posiadają pełen zakres tonalny i płynne przejścia między kolorami. Jednak są bardziej podatne na degradację jakości w porównaniu do obrazów cyfrowych.</p>
+        <p>PRZYŁADY:</p>
+        <ul>
+            <li>pozytyw (odbitka fotograficzna),</li>
+            <li>negatyw (film),</li>
+            <li>diapozytyw (slajd),</li>
+            <li>rysunek,</li>
+            <li>obraz malarski.</li>
+        </ul>
+
+        <h1 id="g10">OBRAZ CYFROWY</h1>
+        <p>to reprezentacja graficzna, która jest zapisana i przetwarzana w postaci cyfrowej za pomocą bitów i bajtów. Obrazy cyfrowe są wykorzystywane w wielu dziedzinach, takich jak fotografika cyfrowa, projektowanie graficzne, animacja, gry komputerowe i wiele innych.</p>
+        <p>PARAMETRY OBRAZU CYFROWEGO:</p>
+        <ul>
+            <li>Rozdzielczość,</li>
+            <li>Głębia kolorów    => np. 8-bitowa (256 kolorów), 16-bitowa (65 536 kolorów) i 24-bitowa (16,7 miliona kolorów),</li>
+            <li>Format pliku      => np. JPEG, PNG, GIF, BMP itp. </li>
+            <li>Proporcje obrazu  => np. 4:3, 16:9, 21:9, 16:10</li>
+            <li>Rozmiar pliku.</li>
+        </ul>
+
+        <h1 id="g11">OBRAZ BINARNY (uint8)</h1>
+        <p>to rodzaj obrazu cyfrowego, w którym piksele są reprezentowane przez 8-bitowe wartości liczbowe, przyjmujące tylko dwa stany: 0 (czarny) i 255 (biały). Są one szeroko wykorzystywane w analizie obrazów, przetwarzaniu wizualnym, segmentacji obiektów i rozpoznawaniu. Mają prostą strukturę, co ułatwia ich przetwarzanie i analizę. Znajdują zastosowanie w wizji komputerowej, analizie medycznej, robotyce, detekcji krawędzi i innych dziedzinach, a także jako reprezentacja informacji logicznych.</p>
+
+        <h1 id="g12">OBRAZ BINARNY (1 bit)</h1>
+        <p>to prosty rodzaj obrazu cyfrowego, gdzie każdy piksel może mieć wartość 0 (czerń) lub 1 (biel). Są wykorzystywane w aplikacjach, gdzie istotne jest tylko wystąpienie lub brak danego elementu, a nie jego odcień czy detale. Obrazy binarne o 1 bit są przydatne w ikonach, maskach, algorytmach segmentacji i wykrywania krawędzi. Mają niskie wymagania pamięciowe i są skuteczne w kompresji danych. Popularnym formatem dla obrazów binarnych jest BMP, a do kompresji stosuje się techniki takie jak run-length encoding (RLE).</p>
+
+        <h1 id="g13">KODOWANIE BIEŻĄCYCH DŁUGOŚCI (RLE)</h1>
+        <p>to prosta metoda kompresji danych stosowana w kompresji obrazów i danych tekstowych. Polega na zastępowaniu powtarzających się sekwencji danych symbolem i liczbą powtórzeń. W przypadku kompresji obrazów, RLE analizuje powtarzające się sekwencje pikseli o tym samym kolorze i zastępuje je specjalnym symbolem i liczbą powtórzeń. Ta technika może znacznie zmniejszyć rozmiar pliku, szczególnie w przypadku obrazów z dużymi obszarami powtarzającymi się. Jednak skuteczność RLE zależy od charakterystyki danych wejściowych, a po dekompresji dane są przywracane do pierwotnej formy.</p>
+
+        <h1 id="g14">DYSKRETNA TRANSFORMACJA COSINUSOWA (DCT)</h1>
+        <p>to matematyczne przekształcenie używane w kompresji obrazów i dźwięku. DCT zamienia sygnał z dziedziny czasu na dziedzinę częstotliwości, reprezentując różne składowe częstotliwości w sygnale za pomocą współczynników. Jest wykorzystywana w algorytmach kompresji, takich jak JPEG, gdzie współczynniki DCT są kwantyzowane i kodowane w celu zmniejszenia rozmiaru pliku przy minimalnej utracie jakości. DCT jest stosowana na blokach pikseli w przypadku kompresji obrazów i posiada różne warianty, takie jak DCT-1, DCT-2 itd.</p>
+
+        <h1 id="g15">ODWROTNA TRANSFORMACJA COSINUSOWA (IDCT)</h1>
+        <p>to proces przywracania oryginalnego sygnału z wykorzystaniem współczynników DCT. IDCT oblicza sumę wartości przemnożonych przez funkcje kosinusowe i współczynniki normalizacji, aby odtworzyć sygnał w dziedzinie czasu. Jest używana w dekompresji obrazów, szczególnie w przypadku formatów takich jak JPEG, do przywrócenia oryginalnego obrazu po przekształceniu DCT. IDCT jest procesem odwrotnym do obliczania DCT i jest niezbędna do przywracania sygnału do jego pierwotnej formy.</p>
+
+        <h1 id="g16">JPG/JPEG</h1>
+        <p>(JPEG, Joint Photographic Experts Group):</p>
+        <ul>
+            <li>kompresja stratna,</li>
+            <li>24-bit głębia kolorów.</li>
+        </ul>
+
+        <h1 id="g17">PNG</h1>
+        <p>(Portable Network Graphics):</p>
+        <ul>
+            <li>kompresja bezstratna,</li>
+            <li>24-bit, 8-bit, 1-bit głębia kolorów,</li>
+            <li>przezroczystość.</li>
+        </ul>
+
+        <h1 id="g18">GIF</h1>
+        <p>(Graphics Interchange Format):</p>
+        <ul>
+            <li>animacje,</li>
+            <li>max. 256 kolorów,</li>
+            <li>przezroczystość.</li>
+        </ul>
+
+        <h1 id="g19">SVG</h1>
+        <ul>
+            <li>przezroczystość,</li>
+            <li>wektorówka,</li>
+            <li>oparty na XML.</li>
+        </ul>
+
+        <h1 id="g20">POSTSCRIPT</h1>
+        <p>to język programowania używany do opisu grafiki 2D. Jest niezależny od urządzenia i służy do opisywania elementów takich jak tekst, kształty i obrazy na stronie. PostScript jest powszechnie stosowany w druku, przetwarzaniu obrazów i tworzeniu dokumentów. Jest również podstawą dla formatu PDF i jest potężnym narzędziem do tworzenia i manipulowania grafiką.</p>
+
+        <h1 id="g21">KONWOLUCJA DYSKRETNA</h1>
+        <p>(zwanej także splotem funkcji) -jest używana do wykrywania cech, takich jak krawędzie czy tekstury, i znajduje zastosowanie w przetwarzaniu obrazów, rozpoznawaniu wzorców i segmentacji obrazu.</p>
+
+        <h1 id="g22">FILTR JEDNOSTKOWY</h1>
+        <p>&ensp;&ensp;&ensp;&ensp;[ 0 0 0 ]<br>w = [ 0 1 0 ]<br>&ensp;&ensp;&ensp;&ensp;[ 0 0 0 ]</p>
+        <p>Piksel wynikowy będzie więc kopią piksela z bitmapy źródłowej. Filtr jednostkowy w grafice 2D to filtr konwolucyjny.</p>
+
+        <h1 id="g23">FILTR DOLNOPRZEPUSTOWY / UŚREDNIAJĄCY</h1>
+        <p>&ensp;&ensp;&ensp;&ensp;[ 1 1 1 ]<br>w = [ 1 1 1 ]<br>&ensp;&ensp;&ensp;&ensp;[ 1 1 1 ]</p>
+        <p>Jego celem jest wygładzenie obrazu poprzez redukcję wysokich częstotliwości i szczegółów pikseli. Filtr dolnoprzepustowy jest często używany do usuwania szumów, rozmycia obrazów lub zmniejszania ich rozdzielczości.</p>
+
+        <h1 id="g24">FILTR GÓRNOPRZEPUSTOWY / WYOSTRZAJĄCY</h1>
+        <p>&ensp;&ensp;&ensp;&ensp;[ 0 -1&ensp; 0 ]<br>w = [-1 &ensp;5 -1 ]<br>&ensp;&ensp;&ensp;&ensp;[ 0 -1&ensp; 0 ]</p>
+        <p>Jego celem jest wzmocnienie szczegółów i krawędzi w obrazie poprzez podkreślenie wysokich częstotliwości. Efektem działania filtru górnoprzepustowego jest wyostrzenie obrazu i wyodrębnienie cech. Filtry te są używane do poprawy ostrości obrazów, wykrywania krawędzi i usuwania rozmycia.</p>
+
+        <h1 id="g25">FILTRY STATYCZNE</h1>
+        <p>Filtry statyczne w przetwarzaniu obrazów są filtrami, których parametry i działanie są stałe na całej powierzchni obrazu. Nie uwzględniają one lokalnych różnic i cech obrazu. Przykłady takich filtrów to filtry dolnoprzepustowe, górnoprzepustowe, wyostrzające, wygładzające czy detekcji krawędzi. Filtry statyczne mają szerokie zastosowanie w poprawianiu jakości obrazu, usuwaniu szumów, wyostrzaniu krawędzi itp.</p>
+
+        <h1 id="g26">TRANSFORMACJA FOURIERA</h1>
+        <p>Przekształcenie Fouriera umożliwia analizę amplitud i faz tych składowych oraz pozwala na badanie widma częstotliwościowego obrazu. Wynik transformacji Fouriera to dwuwymiarowe widmo częstotliwościowe. Współczynniki Fouriera to po prostu amplitudy poszczególnych składowych.</p>
+
+        <h1 id="g27">LaTeX</h1>
+        <p>to system składu tekstu, używany głównie do tworzenia dokumentów naukowych i matematycznych. LaTeX jest darmowy. Jest szeroko stosowany w środowisku naukowym i akademickim ze względu na swoją elastyczność i profesjonalny wygląd.</p>
+    </main>
+    <footer>WEEK-END DEVELOPMENT<br>Copyright &copy; 2023 </footer>
+    <script>//setTimeout(function () { window.location.reload(1); }, 5000); // RELOADER</script>
+</body>
+
+</html>
