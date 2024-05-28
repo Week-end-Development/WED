@@ -1,60 +1,49 @@
-```
-       All rights reserved (c) 2024 Week-End Development
-██╗    ██╗███████╗███████╗██╗  ██╗     ███████╗███╗   ██╗██████╗
-██║    ██║██╔════╝██╔════╝██║ ██╔╝     ██╔════╝████╗  ██║██╔══██╗
-██║ █╗ ██║█████╗  █████╗  █████╔╝█████╗█████╗  ██╔██╗ ██║██║  ██║
-██║███╗██║██╔══╝  ██╔══╝  ██╔═██╗╚════╝██╔══╝  ██║╚██╗██║██║  ██║
-╚███╔███╔╝███████╗███████╗██║  ██╗     ███████╗██║ ╚████║██████╔╝
- ╚══╝╚══╝ ╚══════╝╚══════╝╚═╝  ╚═╝     ╚══════╝╚═╝  ╚═══╝╚═════╝
-      ██████╗ ███████╗██╗   ██╗███████╗
-      ██╔══██╗██╔════╝██║   ██║██╔════╝
-      ██║  ██║█████╗  ██║   ██║███████╗
-      ██║  ██║██╔══╝  ╚██╗ ██╔╝╚════██║
-      ██████╔╝███████╗ ╚████╔╝ ███████║
-      ╚═════╝ ╚══════╝  ╚═══╝  ╚══════╝  PRESENT:
+---
+topic: "Tablica informacyjna"
+tags:  ["info"]
+---
+```yaml
+date:         28.05.2024
+copyright:    "All rights reserved (c) 2024 WEEK-END DEVELOPMENT"
+version:      0x0001
 ```
 # TABLICA INFORMACYJNA
 - [TABLICA INFORMACYJNA](#tablica-informacyjna)
-- [SYS-OPS](#sys-ops)
-  - [Terminy zaliczeń egzaminów](#terminy-zaliczeń-egzaminów)
-  - [Terminy zaliczeń wykładów](#terminy-zaliczeń-wykładów)
-- [DEV-OPS](#dev-ops)
-  - [Terminy zaliczeń egzaminów](#terminy-zaliczeń-egzaminów-1)
-  - [Terminy zaliczeń wykładów](#terminy-zaliczeń-wykładów-1)
+- [ZALICZENIA 2024 SEMESTR LETNI](#zaliczenia-2024-semestr-letni)
+  - [SYS-OPS](#sys-ops)
 - [EXTRA](#extra)
   - [STRONA Z NOTATKAMI](#strona-z-notatkami)
     - [Do Administracja sieciowymi systemami operacyjnymi](#do-administracja-sieciowymi-systemami-operacyjnymi)
 ---
----
-# SYS-OPS
-## Terminy zaliczeń egzaminów
-| No. |                 PRZEDMIOT                 |        TERMIN 0         |        TERMIN 1         |        TERMIN 2         |
-| --- | :---------------------------------------: | :---------------------: | :---------------------: | :---------------------: |
-| 1   |      Podstawy sztucznej inteligencji      | 10:00 29.01.2024 P3-206 | 10:00 06.02.2024 P3-206 | 10:00 16.02.2024 P3-206 |
-| 2   | Projektowy zespół systemu informatycznego | 14:40 25.01.2023 P5-206 | 14:40 08.02.2024 P5-204 | 14:40 18.02.2024 P5-204 |
-| 3   |      Testowanie aplikacji i systemów      | 07:30 30.01.2024 P2-314 | 11:00 05.02.2024 P5-101 | 11:00 12.02.2024 P5-101 |
-## Terminy zaliczeń wykładów
-| No. |                    PRZEDMIOT                    | TERMIN 0 |        TERMIN 1         |         TERMIN 2         |
-| --- | :---------------------------------------------: | :------: | :---------------------: | :----------------------: |
-| 1   |      Projektowanie rozwiązań internetowych      |    -     | 13:45 25.01.2024 P1-215 | 13:45 01.02.2024 P1-215  |
-| 2   |                 Systemy wizyjne                 |    -     | 09:15 24.01.2024 P2-212 | 10:05? 31.01.2024 P2-212 |
-| 3   |            Podstawy teorii systemów             |    -     | 18:05 22.01.2024 P5-A-1 | 18:05 29.01.2024 P5-A-1  |
-| 4   | Administracja sieciowymi systemami operacyjnymi |   DONE   |       15.01.2024        |        22.01.2024        |
 
-# DEV-OPS
-## Terminy zaliczeń egzaminów
-| No. |                 PRZEDMIOT                 |        TERMIN 0         |        TERMIN 1         |        TERMIN 2         |
-| --- | :---------------------------------------: | :---------------------: | :---------------------: | :---------------------: |
-| 1   |      Podstawy sztucznej inteligencji      | 11:55 29.01.2024 P3-206 | 10:00 06.02.2024 P3-206 | 10:00 16.02.2024 P3-206 |
-| 2   | Projektowy zespół systemu informatycznego | 16:20 29.01.2023 P5-114 | 12:00 08.02.2024 P5-204 | 12:00 15.02.2024 P5-204 |
-| 3   | Dobre praktyki wytwarzania oprogramowania | 15:30 30.01.2024 P5-A-1 | 10:00 05.02.2024 P5-A-1 | 10:00 12.02.2024 P5-A-1 |
-## Terminy zaliczeń wykładów
-| No. |        PRZEDMIOT        | TERMIN 0 |        TERMIN 1         |        TERMIN 2         |
-| --- | :---------------------: | :------: | :---------------------: | :---------------------: |
-| 1   |   Grafika komputerowa   |    -     | 11:55 26.01.2024 P5-114 | 12:05 02.02.2024 P5-114 |
-| 2   |   Podstawy automatyki   |    -     | 15:30 22.01.2024 P5-A-1 | 15:30 29.01.2024 P5-A-1 |
-| 3   | Programowanie systemowe |    -     | 17:15 25.01.2024 P5-A-1 |          ?N/A?          |
-| 4   |    Systemy wbudowane    |    -     | 13:45 02.02.2024 P5-114 |          ?N/A?          |
+# ZALICZENIA 2024 SEMESTR LETNI
+## SYS-OPS
+|   #   | PRZEDMIOT                                              |           TERMIN 0            |               TERMIN 1               | TERMIN 2 |
+| :---: | ------------------------------------------------------ | :---------------------------: | :----------------------------------: | :------: |
+|   1   | Metodyki badań naukowych                               |               -               |    14:30-16:45 19.06.2024 P5-101     |    -     |
+|   2   | Narzędzia sztucznej inteligencji                       | 14:40-15:25 04.06.2024 P5-A-1 |    14:40-15:25 11.06.2024 P5-A-1     |    -     |
+|   3   | Nowoczesne technologie w informatyce                   |               -               |    11:00-12:40 11.06.2024 P3-109     |    -     |
+|   4   | Projektowanie zorientowane na użytkownika              |               -               |    10:05-10:50 05.06.2024 P1-114     |    -     |
+|   5   | Ochrona danych w systemach i sieciach komputerowych    |               -               |                  -                   |    -     |
+|   6   | Podstawy zintegrowanych systemów zarządzania           |               -               | 14:40-15:25 06.06.2024 P5-B-1/P1-204 |    -     |
+|   7   | Rozwiązania teleinformatyczne sieci Internet           |               -               |    09:15-10:50 11.06.2024 P1-204     |    -     |
+|   8   | Administracja infrastrukturą sieciową przedsiębiorstwa |               -               |                  -                   |    -     |
+
+```mermaid
+gantt
+  title ZALICZENIA 2024 SEMESTR LETNI
+  dateFormat MM-DD HH:mm
+  axisFormat %m.%d %H:%M
+  excludes weekends
+  section SYS-OPS
+    Narzędzia sztucznej inteligencji : milestone, 2024-06-04 14:40, 0d
+    Projektowanie zorientowane na użytkownika : milestone, 2024-06-05 10:05, 0d
+    Podstawy zintegrowanych systemów zarządzania  : milestone, 2024-06-06 14:40, 0d
+    Rozwiązania teleinformatyczne sieci Internet : milestone, 2024-06-11 09:15, 0d
+    Nowoczesne technologie w informatyce : milestone, 2024-06-11 11:00, 0d
+    Narzędzia sztucznej inteligencji : milestone, 2024-06-11 14:40, 0d
+    Metodyki badań naukowych : milestone, 2024-06-19 14:30, 0d
+```
 
 # EXTRA
 ## STRONA Z NOTATKAMI
