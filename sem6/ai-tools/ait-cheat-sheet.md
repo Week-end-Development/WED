@@ -6,8 +6,7 @@ tags: ["sem6", "ait", "summary"]
 authors:      ["Fr0zen", "BO$"]
 date:         [02.06.2024]
 copyright:    "All rights reserved (c) 2024 WEEK-END DEVELOPMENT"
-status:       "IN PROGRESS"
-version:      0x0002
+version:      0x0003
 ```
 - [Narzędzia sztucznej inteligencji](#narzędzia-sztucznej-inteligencji)
 - [EtapTworzeniaModelu](#etaptworzeniamodelu)
@@ -22,6 +21,12 @@ version:      0x0002
   - [Wady](#wady)
   - [Zalety](#zalety)
   - [Wybór optymalnego modelu regresyjnego (kryteria)](#wybór-optymalnego-modelu-regresyjnego-kryteria)
+- [Regresja logistyczna](#regresja-logistyczna)
+  - [Funkcja Sigmoid](#funkcja-sigmoid)
+  - [Regresja liniowa vs logistyczna](#regresja-liniowa-vs-logistyczna)
+- [Metody próbkowania danych](#metody-próbkowania-danych)
+  - [Bazujące na prawdopodobieństwie](#bazujące-na-prawdopodobieństwie)
+  - [Bez prawdopodobieństwa](#bez-prawdopodobieństwa)
 - [Ewaluacja modelu (ocena)](#ewaluacja-modelu-ocena)
   - [Dokładność (accurancy)](#dokładność-accurancy)
   - [Precyzja (precision)](#precyzja-precision)
@@ -58,5 +63,26 @@ version:      0x0002
 
 Narzędzia sztucznej inteligencji
 ================================================================
+
+```mermaid
+graph TB
+  a(UCZENIE MASZYNOWE)
+  b0(NIENADZOROWANE)
+  b1(ZE WZMOCNIENIEM)
+  b2(NADZOROWANE)
+  c0[Redukcja wymiarów]
+  c1[Klasteryzacja]
+  c2[Systemy rekomendacyjne]
+  c3[Regresja]
+  c4[Kalsyfikacja]
+  a --> |Brak odpowiedzi| b0
+  a --> b1
+  a --> |Mamy odpowiedzi| b2
+  b0 --> |Znajdowanie zależności| c0
+  b0 --> |Szukanie podobieństwa| c1
+  b0 --> |Przewidywanie sekwencji| c2
+  b2 --> |Przewidywanie liczb| c3
+  b2 --> |Przewidywanie kategorii| c4
+```
 
 [LINK do całego pliku](https://github.com/Week-end-Development/INF-I/blob/main/sem6/ai-tools/ait-cheat-sheet.md)
