@@ -7,7 +7,6 @@ author:       "BO$"
 date:         08.06.2024
 copyright:    "All rights reserved (c) 2024 WEEK-END DEVELOPMENT"
 version:      0x0003
-status:       "IN PROGRESS"
 ```
 > [!CAUTION]
 > **WEEK-END DEVELOPMENT** ***Nie gwarantuje poprawności informacji!!!***
