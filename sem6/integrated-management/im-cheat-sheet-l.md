@@ -138,6 +138,7 @@ Trzy punkty widzenia
 - Logiczne jednostki pracy - ochrona integralności transakcji
 - Instancja
 - Procesy robocze
+
 | TYP PROCESU ROBOCZEGO | WYKORZYSTANIE                                                                                                              |
 | --------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | Dialog (D)            | Komunikacja (dialog) użytkownika z systemem                                                                                |
@@ -145,6 +146,7 @@ Trzy punkty widzenia
 | Background (B)        | Realizuje prace pochłaniające duże ilości czasu oraz prace, które wykonane mają być automatycznie, bez udziału użytkownika |
 | Enqueue (E)           | Zarządzanie blokadami, umożliwia synchroniczny dostęp wielu serwerom aplikacji do bazy danych i utrzymuje spójność danych  |
 | Spool (S)             | Formatowanie wydruku, obsługa kolejki wydruku                                                                              |
+
 - Message Server
 - Dispatcher
 
