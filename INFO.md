@@ -18,7 +18,7 @@ TABLICA INFORMACYJNA
 gantt
   title ZALICZENIA 2024 SEMESTR LETNI
   dateFormat MM-DD HH:mm
-  axisFormat %d.%m %a
+  axisFormat %d.%m %a %H:%M
   excludes weekends
   section SYS-OPS
     %Narzędzia sztucznej inteligencji : milestone, 2024-06-04 14:40, 0d
