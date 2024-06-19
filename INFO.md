@@ -21,15 +21,15 @@ gantt
   axisFormat %d.%m %a %H:%M
   excludes weekends
   section SYS-OPS
-    %Narzędzia sztucznej inteligencji : milestone, 2024-06-04 14:40, 0d
-    %Administracja infrastrukturą sieciową przedsiębiorstwa : milestone, 2024-06-05 15:30, 0d
-    %Rozwiązania teleinformatyczne sieci Internet : milestone, 2024-06-11 09:15, 0d
-    %Nowoczesne technologie w informatyce : milestone, 2024-06-11 11:00, 0d
-    %Narzędzia sztucznej inteligencji : milestone, 2024-06-11 14:40, 0d
-    %Projektowanie zorientowane na użytkownika : milestone, 2024-06-12 10:05, 0d
-    %Podstawy zintegrowanych systemów zarządzania  : milestone, 2024-06-13 14:40, 0d
-    %Metodyki badań naukowych : milestone, 2024-06-19 14:30, 0d
-    %Podstawy zintegrowanych systemów zarządzania  : milestone, 2024-06-20 14:40, 0d
+    Narzędzia sztucznej inteligencji : milestone, 2024-06-04 14:40, 0d
+    Administracja infrastrukturą sieciową przedsiębiorstwa : milestone, 2024-06-05 15:30, 0d
+    Rozwiązania teleinformatyczne sieci Internet : milestone, 2024-06-11 09:15, 0d
+    Nowoczesne technologie w informatyce : milestone, 2024-06-11 11:00, 0d
+    Narzędzia sztucznej inteligencji : milestone, 2024-06-11 14:40, 0d
+    Projektowanie zorientowane na użytkownika : milestone, 2024-06-12 10:05, 0d
+    Podstawy zintegrowanych systemów zarządzania  : milestone, 2024-06-13 14:40, 0d
+    Metodyki badań naukowych : milestone, 2024-06-19 14:30, 0d
+    Podstawy zintegrowanych systemów zarządzania  : milestone, 2024-06-20 14:40, 0d
 ```
 ## SYS-OPS
 |   #   | PRZEDMIOT                                              |           TERMIN 0            |           TERMIN 1            |           TERMIN 2            |
