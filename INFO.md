@@ -28,8 +28,8 @@ gantt
     %Narzędzia sztucznej inteligencji : milestone, 2024-06-11 14:40, 0d
     %Projektowanie zorientowane na użytkownika : milestone, 2024-06-12 10:05, 0d
     %Podstawy zintegrowanych systemów zarządzania  : milestone, 2024-06-13 14:40, 0d
-    Metodyki badań naukowych : milestone, 2024-06-19 14:30, 0d
-    Podstawy zintegrowanych systemów zarządzania  : milestone, 2024-06-20 14:40, 0d
+    %Metodyki badań naukowych : milestone, 2024-06-19 14:30, 0d
+    %Podstawy zintegrowanych systemów zarządzania  : milestone, 2024-06-20 14:40, 0d
 ```
 ## SYS-OPS
 |   #   | PRZEDMIOT                                              |           TERMIN 0            |           TERMIN 1            |           TERMIN 2            |
