@@ -1,0 +1,10 @@
+```yaml
+title: "ZAAWANSOWANE SYSTEMY BAZ DANYCH - CHEAT SHEET"
+date: 2025-06-16
+license: "CC-BY-SA-4.0"
+team: "WEEK-END DEVELOPMENT"
+```
+# ZAAWANSOWANE SYSTEMY BAZ DANYCH - CHEAT SHEET
+
+> [!CAUTION]
+> **WEEK-END DEVELOPMENT** *Nie gwarantuje poprawności informacji!*
