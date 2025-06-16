@@ -94,5 +94,77 @@ SELECT orders.id, users.name FROM orders JOIN users ON orders.user_id = users.id
 ## BAZA TYPU KLUCZ-WARTOŚĆ (KEY-VALUE)
 Prosty model baz danych, gdzie każdemu unikalnemu kluczowi przypisana jest jedna wartość (np. liczba, tekst, JSON, obraz).
 
+### Klucz (Key)
+* Unikalny identyfikator (np. `anna`, `2022-02-22`, `user:123`, `UUID`)
+* Może być generowany automatycznie lub obliczany
+* Zaleca się krótkie klucze (lepsza wydajność)
+
+### Wartość (Value)
+* Dane powiązane z kluczem (np. tekst, liczba, JSON, obraz)
+* Operacje: **SET**, **GET**, **DEL**
+* Brak ograniczeń typu danych, ale istnieją limity rozmiaru (np. w Redis)
+
+### ZASTOSOWANIA
+- Cache (np. sesje użytkowników)
+- Kolejki (np. Celery, RabbitMQ)
+- Liczniki i rankingi (np. top 10 graczy)
+- DynamoDB AWS
+
+### ZALETY
+- Bardzo szybki dostęp do danych (RAM)
+- Prosta struktura i obsługa (GET, SET, DEL)
+- Łatwa skalowalność (np. Redis Cluster)
+
+### WADY
+- Brak relacji i złożonych zapytań (JOIN, WHERE itp.)
+- Ograniczone możliwości analizy danych
+
+### REDIS
+- Działa w pamięci (RAM) z opcją zapisu na dysku (RDB/AOF)
+- Obsługuje różne typy danych: string, list, set, hash, zset
+- Wspiera Pub/Sub, klastrowanie i wysoką dostępność (Sentinel)
+
+#### Redis - komendy
+
+| Komenda          | Opis                                        |
+| ---------------- | ------------------------------------------- |
+| `SET key value`  | Ustawia wartość dla klucza                  |
+| `GET key`        | Pobiera wartość przypisaną do klucza        |
+| `DEL key`        | Usuwa klucz i jego wartość                  |
+| `INCR key`       | Zwiększa wartość numeryczną o 1             |
+| `DECR key`       | Zmniejsza wartość numeryczną o 1            |
+| `EXISTS key`     | Sprawdza, czy klucz istnieje (`1` lub `0`)  |
+| `EXPIRE key sec` | Ustawia czas życia (TTL) klucza w sekundach |
+| `TTL key`        | Sprawdza pozostały czas życia klucza        |
+| `FLUSHALL`       | Usuwa wszystkie dane z bazy (ostrożnie!)    |
+
+
+## BAZY PLIKOWE - *DOKUMENTOWE*
+* Przechowują dane w **dokumentach JSON/BSON**, zgrupowanych w **kolekcje** (jak tabele w SQL).
+* Każdy dokument to niezależny obiekt z parami **klucz–wartość**.
+* Umożliwiają **elastyczną strukturę** – dokumenty w jednej kolekcji mogą się różnić (tzw. polimorfizm).
+
+### ZASTOSOWANIE
+- aplikacje webowe,
+- logi,
+- profile użytkowników,
+- dynamiczne dane z częstymi zmianami schematu.
+
+### Zalety:
+* Brak wymuszonego schematu (duża elastyczność)
+* Prosta obsługa i rozwój (szczególnie w aplikacjach webowych)
+* Skalowalność pozioma (sharding)
+
+### Wady:
+* Mniejsza spójność danych (brak pełnego ACID)
+* Nieoptymalne dla ściśle ustrukturyzowanych danych (np. finanse)
+* Walidacja danych po stronie aplikacji
+
+### MongoDB
+* Przechowuje dane w formacie **BSON** (rozszerzony JSON)
+* Obsługuje typy: `string`, `int`, `array`, `object`, `date`, `boolean`, `null`
+* Wspiera agregacje, replikację, sharding, zapytania złożone
+* Klienty m.in. dla Pythona (`pymongo`), Node.js, CLI (`mongo`)
+
 > [!NOTE]  
 > To jest tylko podgląd. [Pełna wersja znajduje się tutaj](https://github.com/Week-end-Development/WED-pro/blob/main/msc/semester01/database_systems_dump_s.pl.md) i jest dostępna dla osób zaangażowanych w projekt.
